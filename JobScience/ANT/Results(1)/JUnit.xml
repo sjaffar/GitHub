@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JobScience/tests" tests="6" failures="0" skipped="0" hostname="DT2659" time="326.483" timestamp="Thu Mar 30 11:03:41 BST 2017">
+	<properties>
+		<property name="excludeCallableTestCases" value="true"/>
+		<property name="testEnvironment" value="TestEnv"/>
+		<property name="pluginOutputLevel" value="WARNING"/>
+		<property name="projectPath" value=".."/>
+		<property name="salesforceMetadataCache" value="Reuse"/>
+		<property name="resultsPathDisposition" value="Increment"/>
+		<property name="testOutputLevel" value="WARNING"/>
+		<property name="webBrowserType" value="Google Chrome"/>
+		<property name="resultsPath" value="../ANT/Results"/>
+		<property name="webBrowserConfiguration" value="Full Screen"/>
+		<property name="projectCachePath" value="../../.provarCaches"/>
+	</properties>
+	<testcase classname="tests/TestSuite\Sales-General\Accounts\41-VerifyCallTypePIcklistValues.testcase" name="41-VerifyCallTypePIcklistValues.testcase" time="53.153">
+	</testcase>
+	<testcase classname="tests/TestSuite\Sales-General\Accounts\42-VerifyReasonForCallPicklistValues.testcase" name="42-VerifyReasonForCallPicklistValues.testcase" time="31.764">
+	</testcase>
+	<testcase classname="tests/TestSuite\Sales-General\Accounts\43-VerifyOutboundPicklistValues.testcase" name="43-VerifyOutboundPicklistValues.testcase" time="28.909">
+	</testcase>
+	<testcase classname="tests/TestSuite\Sales-General\Accounts\44-VerifyOutboundCallSuccessErrorMessage.testcase" name="44-VerifyOutboundCallSuccessErrorMessage.testcase" time="28.609">
+	</testcase>
+	<testcase classname="tests/TestSuite\Sales-General\Accounts\631-VerifyInvoiceName.testcase" name="631-VerifyInvoiceName.testcase" time="110.523">
+	</testcase>
+	<testcase classname="tests/TestSuite\Sales-General\Accounts\635-VerifyviewUsersLink.testcase" name="635-VerifyviewUsersLink.testcase" time="56.293">
+	</testcase>
+</testsuite>

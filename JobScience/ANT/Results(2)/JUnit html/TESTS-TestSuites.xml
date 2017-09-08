@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite failures="0" hostname="DT2659" id="0" name="JobScience/tests" package="" skipped="0" tests="3" time="201.958" timestamp="Thu Mar 30 11:12:01 BST 2017">
+	    <properties>
+		      <property name="excludeCallableTestCases" value="true" />
+
+		      <property name="testEnvironment" value="TestEnv" />
+
+		      <property name="pluginOutputLevel" value="WARNING" />
+
+		      <property name="projectPath" value=".." />
+
+		      <property name="salesforceMetadataCache" value="Reuse" />
+
+		      <property name="resultsPathDisposition" value="Increment" />
+
+		      <property name="testOutputLevel" value="WARNING" />
+
+		      <property name="webBrowserType" value="Google Chrome" />
+
+		      <property name="resultsPath" value="../ANT/Results" />
+
+		      <property name="webBrowserConfiguration" value="Full Screen" />
+
+		      <property name="projectCachePath" value="../../.provarCaches" />
+
+	    </properties>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\Federation\56-VerifyAccountGroupName.testcase" name="56-VerifyAccountGroupName.testcase" time="66.962">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\Federation\57-VerifyPrincipalAccountName.testcase" name="57-VerifyPrincipalAccountName.testcase" time="39.644">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\Federation\58-VerifyNewOpportunityInPrincipalAccountandAG.testcase" name="58-VerifyNewOpportunityInPrincipalAccountandAG.testcase" time="86.092">
+	</testcase>
+
+  </testsuite>
+</testsuites>

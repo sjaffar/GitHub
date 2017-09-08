@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:string="xalan://java.lang.String" xmlns:lxslt="http://xml.apache.org/xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Unit Test Results.</title>
+<style type="text/css">
+      body {
+        font:normal 68% verdana,arial,helvetica;
+        color:#000000;
+      }
+      table tr td, table tr th {
+          font-size: 68%;
+      }
+      table.details tr th{
+        font-weight: bold;
+        text-align:left;
+        background:#a6caf0;
+      }
+      table.details tr td{
+        background:#eeeee0;
+      }
+
+      p {
+        line-height:1.5em;
+        margin-top:0.5em; margin-bottom:1.0em;
+      }
+      h1 {
+        margin: 0px 0px 5px; font: 165% verdana,arial,helvetica
+      }
+      h2 {
+        margin-top: 1em; margin-bottom: 0.5em; font: bold 125% verdana,arial,helvetica
+      }
+      h3 {
+        margin-bottom: 0.5em; font: bold 115% verdana,arial,helvetica
+      }
+      h4 {
+        margin-bottom: 0.5em; font: bold 100% verdana,arial,helvetica
+      }
+      h5 {
+        margin-bottom: 0.5em; font: bold 100% verdana,arial,helvetica
+      }
+      h6 {
+        margin-bottom: 0.5em; font: bold 100% verdana,arial,helvetica
+      }
+      .Error {
+        font-weight:bold; color:red;
+      }
+      .Failure {
+        font-weight:bold; color:purple;
+      }
+      .Properties {
+        text-align:right;
+      }
+      </style>
+<script type="text/javascript" language="JavaScript">
+        var TestCases = new Array();
+        var cur;
+        
+    cur = TestCases['.JobScience/tests'] = new Array();
+    
+        cur['excludeCallableTestCases'] = 'true';
+    
+        cur['pluginOutputLevel'] = 'WARNING';
+    
+        cur['projectCachePath'] = '../../.provarCaches';
+    
+        cur['projectPath'] = '..';
+    
+        cur['resultsPath'] = '../ANT/Results';
+    
+        cur['resultsPathDisposition'] = 'Increment';
+    
+        cur['salesforceMetadataCache'] = 'Reuse';
+    
+        cur['testEnvironment'] = 'TestEnv';
+    
+        cur['testOutputLevel'] = 'WARNING';
+    
+        cur['webBrowserConfiguration'] = 'Full Screen';
+    
+        cur['webBrowserType'] = 'Google Chrome';
+    </script><script type="text/javascript" language="JavaScript">
+        function displayProperties (name) {
+          var win = window.open('','JUnitSystemProperties','scrollbars=1,resizable=1');
+          var doc = win.document;
+          doc.open();
+          doc.write("<html><head><title>Properties of " + name + "</title>");
+          doc.write("<style>")
+          doc.write("body {font:normal 68% verdana,arial,helvetica; color:#000000; }");
+          doc.write("table tr td, table tr th { font-size: 68%; }");
+          doc.write("table.properties { border-collapse:collapse; border-left:solid 1 #cccccc; border-top:solid 1 #cccccc; padding:5px; }");
+          doc.write("table.properties th { text-align:left; border-right:solid 1 #cccccc; border-bottom:solid 1 #cccccc; background-color:#eeeeee; }");
+          doc.write("table.properties td { font:normal; text-align:left; border-right:solid 1 #cccccc; border-bottom:solid 1 #cccccc; background-color:#fffffff; }");
+          doc.write("h3 { margin-bottom: 0.5em; font: bold 115% verdana,arial,helvetica }");
+          doc.write("</style>");
+          doc.write("</head><body>");
+          doc.write("<h3>Properties of " + name + "</h3>");
+          doc.write("<div align=\"right\"><a href=\"javascript:window.close();\">Close</a></div>");
+          doc.write("<table class='properties'>");
+          doc.write("<tr><th>Name</th><th>Value</th></tr>");
+          for (prop in TestCases[name]) {
+            doc.write("<tr><th>" + prop + "</th><td>" + TestCases[name][prop] + "</td></tr>");
+          }
+          doc.write("</table>");
+          doc.write("</body></html>");
+          doc.close();
+          win.focus();
+        }
+      
+      </script>
+</head>
+<body>
+<a name="top"></a>
+<h1>Unit Test Results.</h1>
+<table width="100%">
+<tr>
+<td align="left"></td><td align="right">Designed for use with <a href="http://www.junit.org">JUnit</a> and <a href="http://ant.apache.org/ant">Ant</a>.</td>
+</tr>
+</table>
+<hr size="1">
+<h2>Summary</h2>
+<table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+<tr valign="top">
+<th>Tests</th><th>Failures</th><th>Errors</th><th>Skipped</th><th>Success rate</th><th>Time</th>
+</tr>
+<tr valign="top" class="Failure">
+<td>52</td><td>5</td><td>0</td><td>0</td><td>90.38%</td><td>4742.649</td>
+</tr>
+</table>
+<table border="0" width="95%">
+<tr>
+<td style="text-align: justify;">
+        Note: <i>failures</i> are anticipated and checked for with assertions while <i>errors</i> are unanticipated.
+        </td>
+</tr>
+</table>
+<hr size="1" width="95%" align="left">
+<h2>Packages</h2>
+        Note: package statistics are not computed recursively, they only sum up all of its testsuites numbers.
+        <table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+<tr valign="top">
+<th width="80%">Name</th><th>Tests</th><th>Errors</th><th>Failures</th><th>Skipped</th><th nowrap>Time(s)</th><th nowrap>Time Stamp</th><th>Host</th>
+</tr>
+<tr valign="top" class="Failure">
+<td><a href="#"></a></td><td>52</td><td>0</td><td>5</td><td>0</td><td>4742.649</td><td>Thu Mar 30 12:39:20 BST 2017</td><td>DT2659</td>
+</tr>
+</table>
+<hr size="1" width="95%" align="left">
+<a name=""></a>
+<h3>Package </h3>
+<table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+<tr valign="top">
+<th width="80%">Name</th><th>Tests</th><th>Errors</th><th>Failures</th><th>Skipped</th><th nowrap>Time(s)</th><th nowrap>Time Stamp</th><th>Host</th>
+</tr>
+<tr valign="top" class="Failure">
+<td><a href="#JobScience/tests">JobScience/tests</a></td><td>52</td><td></td><td>5</td><td>0</td><td>4742.649</td><td>Thu Mar 30 12:39:20 BST 2017</td><td>DT2659</td>
+</tr>
+</table>
+<a href="#top">Back to top</a>
+<p></p>
+<p></p>
+<hr size="1" width="95%" align="left">
+<a name="JobScience/tests"></a>
+<h3>TestCase JobScience/tests</h3>
+<table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+<tr valign="top">
+<th>Name</th><th>Status</th><th width="80%">Type</th><th nowrap>Time(s)</th>
+</tr>
+<tr valign="top" class="">
+<td>47-VerifyOpportunityInAccountGroup.testcase</td><td>Success</td><td></td><td>42.555</td>
+</tr>
+<tr valign="top" class="">
+<td>48-VerifyOpportunityInPrincipalAccount.testcase</td><td>Success</td><td></td><td>50.453</td>
+</tr>
+<tr valign="top" class="">
+<td>49-VerifyHasBeenOpportuntiyInAccount.testcase</td><td>Success</td><td></td><td>133.685</td>
+</tr>
+<tr valign="top" class="">
+<td>50-AddProductsToOopportunityInPrincipalAccount.testcase</td><td>Success</td><td></td><td>81.350</td>
+</tr>
+<tr valign="top" class="">
+<td>51-AddProductsToOopportunityInMasterAccount.testcase</td><td>Success</td><td></td><td>175.621</td>
+</tr>
+<tr valign="top" class="">
+<td>52-VerifyAccountGroupName.testcase</td><td>Success</td><td></td><td>129.700</td>
+</tr>
+<tr valign="top" class="">
+<td>53-VerifyPrincipalAccountName.testcase</td><td>Success</td><td></td><td>138.424</td>
+</tr>
+<tr valign="top" class="">
+<td>54-VerifyNewOpportunityInPrincipalAccountandAG.testcase</td><td>Success</td><td></td><td>183.085</td>
+</tr>
+<tr valign="top" class="">
+<td>55-VerifyNewOpportunityFromFeedInPrincipalAccountandAG.testcase</td><td>Success</td><td></td><td>78.884</td>
+</tr>
+<tr valign="top" class="">
+<td>59-VerifyAccountGroupName.testcase</td><td>Success</td><td></td><td>27.596</td>
+</tr>
+<tr valign="top" class="">
+<td>60-VerifyPrincipalAccountName.testcase</td><td>Success</td><td></td><td>33.636</td>
+</tr>
+<tr valign="top" class="">
+<td>61-VerifyNewOpportunityInPrincipalAccountandAG.testcase</td><td>Success</td><td></td><td>77.346</td>
+</tr>
+<tr valign="top" class="">
+<td>62-VerifyAccountGroupName.testcase</td><td>Success</td><td></td><td>28.175</td>
+</tr>
+<tr valign="top" class="">
+<td>63-VerifyPrincipalAccountName.testcase</td><td>Success</td><td></td><td>33.590</td>
+</tr>
+<tr valign="top" class="">
+<td>64-VerifyNewOpportunityInPrincipalAccountandAG.testcase</td><td>Success</td><td></td><td>78.957</td>
+</tr>
+<tr valign="top" class="Error">
+<td>367a-UpdateStandaradEmail.testcase</td><td>Failure</td><td>Execution failed<code>
+<br>
+<br>Assertion Failed.  EqualTo provardepartmental@gmail.com</code></td><td>30.604</td>
+</tr>
+<tr valign="top" class="Error">
+<td>367d-MAUpdateStandaradEmailondeleteAllEmail.testcase</td><td>Failure</td><td>Execution failed<code>
+<br>
+<br>Assertion failed.  (expected) null =   (actual)</code></td><td>44.586</td>
+</tr>
+<tr valign="top" class="Error">
+<td>39-ActivateGroupContract.testcase</td><td>Failure</td><td>Execution failed<code>
+<br>
+<br>The row locator did not match any rows.</code></td><td>74.099</td>
+</tr>
+<tr valign="top" class="Error">
+<td>40-ActivateChildContract.testcase</td><td>Failure</td><td>Execution failed<code>
+<br>
+<br>The excel file doesn't exist.  Path: C:UserssjaffarProvar1.8.9.07Workspace2JobSciencetemplatesHiring Solutions Regression Cycle-28th Sep.xlsx, Absolute Path: C:UserssjaffarProvar1.8.9.07Workspace2JobSciencetemplatesHiring Solutions Regression Cycle-28th Sep.xlsx.</code></td><td>7.627</td>
+</tr>
+<tr valign="top" class="">
+<td>07-CreateEvent-RecruitmentSubsRDVisit.testcase</td><td>Success</td><td></td><td>69.744</td>
+</tr>
+<tr valign="top" class="">
+<td>08-DeleteEvent-RecruitmentSubsRDVisit.testcase</td><td>Success</td><td></td><td>89.400</td>
+</tr>
+<tr valign="top" class="">
+<td>09-CreateEvent-RecruitmentSubsScheduledCall.testcase</td><td>Success</td><td></td><td>70.741</td>
+</tr>
+<tr valign="top" class="">
+<td>10-DeleteEvent-RecruitmentSubsScheduledCall.testcase</td><td>Success</td><td></td><td>85.156</td>
+</tr>
+<tr valign="top" class="">
+<td>11-CreateEvent-Subs6MonthRenewalVisit.testcase</td><td>Success</td><td></td><td>46.622</td>
+</tr>
+<tr valign="top" class="">
+<td>12-DeleteEvent-Subs6MonthRenewalVisit.testcase</td><td>Success</td><td></td><td>63.606</td>
+</tr>
+<tr valign="top" class="">
+<td>13-CreateEvent-Subs6MonthScheduledRenewalCall.testcase</td><td>Success</td><td></td><td>46.863</td>
+</tr>
+<tr valign="top" class="">
+<td>14-DeleteEvent-Subs6MonthScheduledRenewalCall.testcase</td><td>Success</td><td></td><td>71.704</td>
+</tr>
+<tr valign="top" class="">
+<td>15-CreateEvent-CALL.testcase</td><td>Success</td><td></td><td>51.391</td>
+</tr>
+<tr valign="top" class="">
+<td>16-CreateEvent-MEETING.testcase</td><td>Success</td><td></td><td>51.304</td>
+</tr>
+<tr valign="top" class="">
+<td>17-CreateEvent-OTHER.testcase</td><td>Success</td><td></td><td>50.984</td>
+</tr>
+<tr valign="top" class="">
+<td>18-DeleteEventRecruitmentSubsRDVisit.testcase</td><td>Success</td><td></td><td>170.840</td>
+</tr>
+<tr valign="top" class="">
+<td>19-DeleteEventRecruitmentSubsScheduledCall.testcase</td><td>Success</td><td></td><td>169.515</td>
+</tr>
+<tr valign="top" class="">
+<td>20-DeleteEventSub6MonthRenewalVisit.testcase</td><td>Success</td><td></td><td>151.018</td>
+</tr>
+<tr valign="top" class="">
+<td>21-DeleteEventSubs6MonthScheduledRenewalCall.testcase</td><td>Success</td><td></td><td>150.700</td>
+</tr>
+<tr valign="top" class="">
+<td>22-DeleteEventCall.testcase</td><td>Success</td><td></td><td>163.931</td>
+</tr>
+<tr valign="top" class="">
+<td>23-DeleteEventMeeting.testcase</td><td>Success</td><td></td><td>163.066</td>
+</tr>
+<tr valign="top" class="">
+<td>24-DeleteEventOther.testcase</td><td>Success</td><td></td><td>162.432</td>
+</tr>
+<tr valign="top" class="">
+<td>25-UpdateToEarlierDate.testcase</td><td>Success</td><td></td><td>138.832</td>
+</tr>
+<tr valign="top" class="">
+<td>26-SingleEvent.testcase</td><td>Success</td><td></td><td>140.522</td>
+</tr>
+<tr valign="top" class="">
+<td>27-UpdateEventToIncorrectName.testcase</td><td>Success</td><td></td><td>131.130</td>
+</tr>
+<tr valign="top" class="">
+<td>28-UpdateEvent2ToIncorrectName.testcase</td><td>Success</td><td></td><td>110.070</td>
+</tr>
+<tr valign="top" class="">
+<td>29-UpdateSubjectName.testcase</td><td>Success</td><td></td><td>65.703</td>
+</tr>
+<tr valign="top" class="">
+<td>30-OpportunityStageNew.testcase</td><td>Success</td><td></td><td>99.740</td>
+</tr>
+<tr valign="top" class="">
+<td>31-OpportunityStageICM.testcase</td><td>Success</td><td></td><td>63.559</td>
+</tr>
+<tr valign="top" class="">
+<td>32-OpportunityStageAB.testcase</td><td>Success</td><td></td><td>68.823</td>
+</tr>
+<tr valign="top" class="">
+<td>33-OpportunityStageAB.testcase</td><td>Success</td><td></td><td>77.465</td>
+</tr>
+<tr valign="top" class="">
+<td>34-OpportunityStageAB.testcase</td><td>Success</td><td></td><td>98.763</td>
+</tr>
+<tr valign="top" class="">
+<td>35-OpportunityStageNotChanged.testcase</td><td>Success</td><td></td><td>41.766</td>
+</tr>
+<tr valign="top" class="Error">
+<td>37-AddMultipleProductToOpportunity.testcase</td><td>Failure</td><td>Execution failed<code>
+<br>
+<br>The row locator did not match any rows.</code></td><td>88.445</td>
+</tr>
+<tr valign="top" class="">
+<td>38-VerifyGroupOpportunityName.testcase</td><td>Success</td><td></td><td>23.615</td>
+</tr>
+<tr valign="top" class="">
+<td>45-VerifyCallType.testcase</td><td>Success</td><td></td><td>54.343</td>
+</tr>
+<tr valign="top" class="">
+<td>46-VerifyOutboundCallSuccess.testcase</td><td>Success</td><td></td><td>56.267</td>
+</tr>
+</table>
+<div class="Properties">
+<a href="javascript:displayProperties('.JobScience/tests');">
+                    Properties &raquo;
+                </a>
+</div>
+<p></p>
+<a href="#top">Back to top</a>
+</body>
+</html>

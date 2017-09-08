@@ -1,0 +1,2132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="20">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: JobScience (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Sales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="vfDebug"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.bdd.Given" name="Given" testItemId="53" title="Given: I create account with Region, simple phase &amp; funding Group =state">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">I create account with Region, simple phase &amp; funding Group =state</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="54">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="375" title="CreateAccount with Region, Simple Phase &amp; Funding Group">
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">CreateAccount with Region, Simple Phase &amp; Funding Group</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="376">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="372" title="CreateAccount">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">CreateAccount</value>
+                        </argument>
+                      </arguments>
+                      <parameterValueSources>
+                        <parameterValueSource variableName="ExcelData" variableScope="Test">
+                          <cacheToken>C:\\Users\\sjaffar\\Provar\\Provar1.8.10.17\\Salesforce-1\\templates\\CPQ_productTemplate_v2.xlsx;1495704585923</cacheToken>
+                          <cachedParameters>
+                            <apiParam name="RowNumber"/>
+                            <apiParam name="Region"/>
+                            <apiParam name="SimplePhase"/>
+                            <apiParam name="FundingGroup"/>
+                            <apiParam name="Name"/>
+                          </cachedParameters>
+                          <sourceValue class="excelTarget" debug="true" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+                            <workbookPath class="value" valueClass="string">templates/CPQ_productTemplate_v2.xlsx</workbookPath>
+                            <worksheetName class="value" valueClass="string">Account</worksheetName>
+                            <valuesRange class="value" valueClass="string">A1:C4</valuesRange>
+                          </sourceValue>
+                        </parameterValueSource>
+                      </parameterValueSources>
+                      <clauses>
+                        <clause name="hidden" testItemId="377">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="947" title="For Each: {ExcelData}=&gt;var">
+                              <tags/>
+                              <arguments>
+                                <argument id="list">
+                                  <value class="variable">
+                                    <path element="ExcelData"/>
+                                  </value>
+                                </argument>
+                                <argument id="fromItem">
+                                  <value class="value" valueClass="decimal">1</value>
+                                </argument>
+                                <argument id="valueName">
+                                  <value class="value" valueClass="string">var</value>
+                                </argument>
+                                <argument id="continueOnFailure">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="784">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="785" title="On PriceBook page">
+                                      <tags>
+                                        <string>disabled</string>
+                                      </tags>
+                                      <arguments>
+                                        <argument id="uiConnectionName">
+                                          <value class="value" valueClass="string">JobScience</value>
+                                        </argument>
+                                        <argument id="target">
+                                          <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.PriceBook"/>
+                                        </argument>
+                                        <argument id="navigate">
+                                          <value class="value" valueClass="string">Always</value>
+                                        </argument>
+                                        <argument id="targetDescription">
+                                          <value class="value" valueClass="string">On PriceBook page</value>
+                                        </argument>
+                                        <argument id="windowSelection">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
+                                        <argument id="windowSize">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
+                                        <argument id="closeWindow"/>
+                                        <argument id="captureBefore">
+                                          <value class="value" valueClass="string">false</value>
+                                        </argument>
+                                        <argument id="captureAfter">
+                                          <value class="value" valueClass="string">false</value>
+                                        </argument>
+                                        <argument id="uiTargetUrl"/>
+                                      </arguments>
+                                      <clauses>
+                                        <clause name="substeps" testItemId="786">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="787" title="With pricebookTable row">
+                                              <arguments>
+                                                <argument id="uiConnectionName">
+                                                  <value class="value" valueClass="string">JobScience</value>
+                                                </argument>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:pageobject:row?field=pricebookTable"/>
+                                                </argument>
+                                                <argument id="uiRowLocator">
+                                                  <value class="eq">
+                                                    <lhs class="variable">
+                                                      <path element="productName"/>
+                                                    </lhs>
+                                                    <rhs class="variable" topLevel="true">
+                                                      <path element="var"/>
+                                                      <path element="ProductName"/>
+                                                    </rhs>
+                                                  </value>
+                                                </argument>
+                                                <argument id="locatorDescription">
+                                                  <value class="value" valueClass="string">With pricebookTable row</value>
+                                                </argument>
+                                                <argument id="failIfNotFound">
+                                                  <value class="value" valueClass="boolean">true</value>
+                                                </argument>
+                                                <argument id="debugRowLocator"/>
+                                                <argument id="resultName">
+                                                  <value class="value" valueClass="string">Row</value>
+                                                </argument>
+                                                <argument id="resultScope">
+                                                  <value class="value" valueClass="string">Local</value>
+                                                </argument>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                              <clauses>
+                                                <clause name="substeps" testItemId="788">
+                                                  <steps>
+                                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" isTitleUpdated="true" name="UiAssert" testItemId="789" title="VerifyPrice">
+                                                      <arguments>
+                                                        <argument id="resultName">
+                                                          <value class="value" valueClass="string">Values</value>
+                                                        </argument>
+                                                        <argument id="resultScope">
+                                                          <value class="value" valueClass="string">Test</value>
+                                                        </argument>
+                                                        <argument id="fieldAssertions">
+                                                          <value class="valueList" mutable="Mutable">
+                                                            <uiFieldAssertion resultName="listPrice">
+                                                              <fieldLocator uri="ui:pageobject:field?field=listPrice&amp;pageId=pageobjects.PriceBook"/>
+                                                              <attributeAssertions>
+                                                                <uiAttributeAssertion attributeName="value" comparisonType="EqualTo">
+                                                                  <value class="compound">
+                                                                    <parts>
+                                                                      <value valueClass="string">GBP </value>
+                                                                      <variable topLevel="true">
+                                                                        <path element="var"/>
+                                                                        <path element="ListPrice"/>
+                                                                      </variable>
+                                                                    </parts>
+                                                                  </value>
+                                                                </uiAttributeAssertion>
+                                                              </attributeAssertions>
+                                                            </uiFieldAssertion>
+                                                          </value>
+                                                        </argument>
+                                                        <argument id="captureAfter">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="columnAssertions">
+                                                          <value class="valueList" mutable="Mutable"/>
+                                                        </argument>
+                                                        <argument id="pageAssertions">
+                                                          <value class="valueList" mutable="Mutable"/>
+                                                        </argument>
+                                                        <argument id="beforeWait"/>
+                                                        <argument id="autoRetry"/>
+                                                      </arguments>
+                                                    </apiCall>
+                                                  </steps>
+                                                </clause>
+                                              </clauses>
+                                              <generatedParameters>
+                                                <apiParam group="options" name="autoRetry" title="Auto Retry">
+                                                  <summary>Whether to wait for the rows to be visible.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                      </clauses>
+                                      <generatedParameters>
+                                        <apiParam group="target" name="uiTargetUrl" title="Web Page">
+                                          <type>
+                                            <textType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="992" title="Set Values: AccountName">
+                                      <arguments>
+                                        <argument id="values">
+                                          <value class="valueList" mutable="Mutable">
+                                            <namedValues mutable="Mutable">
+                                              <namedValue name="valuePath">
+                                                <value class="value" valueClass="string">AccountName</value>
+                                              </namedValue>
+                                              <namedValue name="value">
+                                                <value class="compound">
+                                                  <parts>
+                                                    <value valueClass="string">ProvarTest </value>
+                                                    <funcCall id="UniqueId">
+                                                      <argument id="length">
+                                                        <value class="value" valueClass="decimal">4</value>
+                                                      </argument>
+                                                      <argument id="format">
+                                                        <value class="value" valueClass="string">ALPHANUMERIC</value>
+                                                      </argument>
+                                                    </funcCall>
+                                                  </parts>
+                                                </value>
+                                              </namedValue>
+                                              <namedValue name="valueScope">
+                                                <value class="value" valueClass="string">Test</value>
+                                              </namedValue>
+                                            </namedValues>
+                                          </value>
+                                        </argument>
+                                      </arguments>
+                                      <parameterValueSources/>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="993" title="On SF Account Home screen">
+                                      <arguments>
+                                        <argument id="uiConnectionName">
+                                          <value class="value" valueClass="string">JobScience</value>
+                                        </argument>
+                                        <argument id="target">
+                                          <value class="uiTarget" uri="sf:ui:target?object=Account&amp;action=ObjectHome"/>
+                                        </argument>
+                                        <argument id="navigate">
+                                          <value class="value" valueClass="string">Always</value>
+                                        </argument>
+                                        <argument id="targetDescription">
+                                          <value class="value" valueClass="string">On SF Account Home screen</value>
+                                        </argument>
+                                        <argument id="windowSelection">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
+                                        <argument id="windowSize">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
+                                        <argument id="closeWindow"/>
+                                        <argument id="captureBefore">
+                                          <value class="value" valueClass="string">false</value>
+                                        </argument>
+                                        <argument id="captureAfter">
+                                          <value class="value" valueClass="string">false</value>
+                                        </argument>
+                                      </arguments>
+                                      <clauses>
+                                        <clause name="substeps" testItemId="994">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="995" title="Click the New button">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=New&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DNew"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                                </argument>
+                                                <argument id="hover">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Click the New button</value>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="afterWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                      </clauses>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="996" title="On SF Account Record Type selection screen">
+                                      <arguments>
+                                        <argument id="uiConnectionName">
+                                          <value class="value" valueClass="string">JobScience</value>
+                                        </argument>
+                                        <argument id="target">
+                                          <value class="uiTarget" uri="sf:ui:target?object=Account&amp;action=recordTypeNew"/>
+                                        </argument>
+                                        <argument id="navigate">
+                                          <value class="value" valueClass="string">Dont</value>
+                                        </argument>
+                                        <argument id="targetDescription">
+                                          <value class="value" valueClass="string">On SF Account Record Type selection screen</value>
+                                        </argument>
+                                        <argument id="windowSelection">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
+                                        <argument id="windowSize">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
+                                        <argument id="closeWindow"/>
+                                        <argument id="captureBefore">
+                                          <value class="value" valueClass="string">false</value>
+                                        </argument>
+                                        <argument id="captureAfter">
+                                          <value class="value" valueClass="string">false</value>
+                                        </argument>
+                                      </arguments>
+                                      <clauses>
+                                        <clause name="substeps" testItemId="997">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="998" title="Set the Record Type select to Master Account">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=RecordType&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3D%7BtargetUrl%3Aobject%7D%26field%3DRecordTypeId"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                                </argument>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">Master Account</value>
+                                                </argument>
+                                                <argument id="blur">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="pressEnter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Set the Record Type select to Master Account</value>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="afterWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" name="value" title="Value">
+                                                  <summary>The value to be populated.</summary>
+                                                  <type>
+                                                    <textType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="blur" title="Tab off field">
+                                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="pressEnter" title="Press Enter">
+                                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="999" title="Click the Continue button">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=save&amp;path=selectRecordType"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                                </argument>
+                                                <argument id="hover">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Click the Continue button</value>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="afterWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                      </clauses>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="958" title="On SF Account (Master Account) New screen">
+                                      <arguments>
+                                        <argument id="uiConnectionName">
+                                          <value class="value" valueClass="string">JobScience</value>
+                                        </argument>
+                                        <argument id="target">
+                                          <value class="uiTarget" uri="sf:ui:target?object=Account&amp;action=New&amp;recordType=Master+Account"/>
+                                        </argument>
+                                        <argument id="navigate">
+                                          <value class="value" valueClass="string">Always</value>
+                                        </argument>
+                                        <argument id="targetDescription">
+                                          <value class="value" valueClass="string">On SF Account (Master Account) New screen</value>
+                                        </argument>
+                                        <argument id="windowSelection">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
+                                        <argument id="windowSize">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
+                                        <argument id="closeWindow"/>
+                                        <argument id="captureBefore">
+                                          <value class="value" valueClass="string">false</value>
+                                        </argument>
+                                        <argument id="captureAfter">
+                                          <value class="value" valueClass="string">false</value>
+                                        </argument>
+                                        <argument id="sfUiTargetResultName">
+                                          <value class="value" valueClass="string">accountId</value>
+                                        </argument>
+                                        <argument id="sfUiTargetResultScope">
+                                          <value class="value" valueClass="string">Test</value>
+                                        </argument>
+                                      </arguments>
+                                      <clauses>
+                                        <clause name="substeps" testItemId="959">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="960" title="Set the Location reference to {$var.Region}">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Location__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DLocation__c"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                                </argument>
+                                                <argument id="value">
+                                                  <value class="variable" topLevel="true">
+                                                    <path element="var"/>
+                                                    <path element="Region"/>
+                                                  </value>
+                                                </argument>
+                                                <argument id="blur">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="pressEnter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Set the Location reference to {$var.Region}</value>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="afterWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Account&amp;field=Location__c" name="value" seq="10000" title="Value">
+                                                  <summary>The value to be populated.</summary>
+                                                  <type>
+                                                    <textType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="961" title="Lookup the Location reference">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Location__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DLocation__c"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=sfLookup"/>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Lookup the Location reference</value>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="afterWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="962" title="On SF Location Lookup screen">
+                                              <arguments>
+                                                <argument id="uiConnectionName">
+                                                  <value class="value" valueClass="string">JobScience</value>
+                                                </argument>
+                                                <argument id="target">
+                                                  <value class="uiTarget" uri="sf:ui:target?lookup=Location__c"/>
+                                                </argument>
+                                                <argument id="navigate">
+                                                  <value class="value" valueClass="string">Dont</value>
+                                                </argument>
+                                                <argument id="targetDescription">
+                                                  <value class="value" valueClass="string">On SF Location Lookup screen</value>
+                                                </argument>
+                                                <argument id="windowSelection">
+                                                  <value class="value" valueClass="string">Default</value>
+                                                </argument>
+                                                <argument id="windowSize">
+                                                  <value class="value" valueClass="string">Default</value>
+                                                </argument>
+                                                <argument id="closeWindow"/>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="string">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="string">false</value>
+                                                </argument>
+                                              </arguments>
+                                              <clauses>
+                                                <clause name="substeps" testItemId="963">
+                                                  <steps>
+                                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="964" title="Click the Location Name button">
+                                                      <arguments>
+                                                        <argument id="locator">
+                                                          <value class="uiLocator" uri="ui:locator?name=Name&amp;path=resultsFrame%2FresultsTable%2FresultsRow&amp;rowLocator=1"/>
+                                                        </argument>
+                                                        <argument id="interaction">
+                                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                                        </argument>
+                                                        <argument id="hover">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="captureBefore">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="captureAfter">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="interactionDescription">
+                                                          <value class="value" valueClass="string">Click the Location Name button</value>
+                                                        </argument>
+                                                        <argument id="beforeWait"/>
+                                                        <argument id="afterWait"/>
+                                                        <argument id="autoRetry"/>
+                                                      </arguments>
+                                                      <generatedParameters>
+                                                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                                          <type>
+                                                            <booleanType/>
+                                                          </type>
+                                                        </apiParam>
+                                                      </generatedParameters>
+                                                    </apiCall>
+                                                  </steps>
+                                                </clause>
+                                              </clauses>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="965" title="On Accounts page">
+                                              <arguments>
+                                                <argument id="uiConnectionName">
+                                                  <value class="value" valueClass="string">JobScience</value>
+                                                </argument>
+                                                <argument id="target">
+                                                  <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.Accounts"/>
+                                                </argument>
+                                                <argument id="navigate">
+                                                  <value class="value" valueClass="string">Dont</value>
+                                                </argument>
+                                                <argument id="targetDescription">
+                                                  <value class="value" valueClass="string">On Accounts page</value>
+                                                </argument>
+                                                <argument id="windowSelection">
+                                                  <value class="value" valueClass="string">Default</value>
+                                                </argument>
+                                                <argument id="windowSize">
+                                                  <value class="value" valueClass="string">Default</value>
+                                                </argument>
+                                                <argument id="closeWindow"/>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="string">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="string">false</value>
+                                                </argument>
+                                                <argument id="uiTargetUrl"/>
+                                              </arguments>
+                                              <clauses>
+                                                <clause name="substeps" testItemId="966">
+                                                  <steps>
+                                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="967" title="Set the Business_ Phase__c to {$var.SimplePhase}">
+                                                      <arguments>
+                                                        <argument id="locator">
+                                                          <value class="uiLocator" uri="ui:pageobject:field?field=Business_Phase__c&amp;pageId=pageobjects.Accounts"/>
+                                                        </argument>
+                                                        <argument id="interaction">
+                                                          <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                                        </argument>
+                                                        <argument id="value">
+                                                          <value class="variable" topLevel="true">
+                                                            <path element="var"/>
+                                                            <path element="SimplePhase"/>
+                                                          </value>
+                                                        </argument>
+                                                        <argument id="blur">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="pressEnter">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="captureBefore">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="captureAfter">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="interactionDescription">
+                                                          <value class="value" valueClass="string">Set the Business_ Phase__c to {$var.SimplePhase}</value>
+                                                        </argument>
+                                                        <argument id="beforeWait"/>
+                                                        <argument id="afterWait"/>
+                                                        <argument id="autoRetry"/>
+                                                      </arguments>
+                                                      <generatedParameters>
+                                                        <apiParam group="value" name="value" seq="10000" title="Value">
+                                                          <summary>The value to be populated.</summary>
+                                                          <type>
+                                                            <choiceType>
+                                                              <constraints>
+                                                                <valueConstraint name="boundedValues">Early Years|Primary|Middle|Secondary|Secondary with sixth form|All-through|All-through with sixth form|Further Education|Higher Education|Further &amp; Higher Education</valueConstraint>
+                                                              </constraints>
+                                                            </choiceType>
+                                                          </type>
+                                                        </apiParam>
+                                                        <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                                          <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                                          <type>
+                                                            <booleanType/>
+                                                          </type>
+                                                        </apiParam>
+                                                        <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                                          <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                                          <type>
+                                                            <booleanType/>
+                                                          </type>
+                                                        </apiParam>
+                                                      </generatedParameters>
+                                                    </apiCall>
+                                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="968" title="Set the Funding_ Group__c to {$var.FundingGroup}">
+                                                      <arguments>
+                                                        <argument id="locator">
+                                                          <value class="uiLocator" uri="ui:pageobject:field?field=Funding_Group__c&amp;pageId=pageobjects.Accounts"/>
+                                                        </argument>
+                                                        <argument id="interaction">
+                                                          <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                                        </argument>
+                                                        <argument id="value">
+                                                          <value class="variable" topLevel="true">
+                                                            <path element="var"/>
+                                                            <path element="FundingGroup"/>
+                                                          </value>
+                                                        </argument>
+                                                        <argument id="blur">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="pressEnter">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="captureBefore">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="captureAfter">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="interactionDescription">
+                                                          <value class="value" valueClass="string">Set the Funding_ Group__c to {$var.FundingGroup}</value>
+                                                        </argument>
+                                                        <argument id="beforeWait"/>
+                                                        <argument id="afterWait"/>
+                                                        <argument id="autoRetry"/>
+                                                      </arguments>
+                                                      <generatedParameters>
+                                                        <apiParam group="value" name="value" seq="10000" title="Value">
+                                                          <summary>The value to be populated.</summary>
+                                                          <type>
+                                                            <choiceType>
+                                                              <constraints>
+                                                                <valueConstraint name="boundedValues">State|Independent</valueConstraint>
+                                                              </constraints>
+                                                            </choiceType>
+                                                          </type>
+                                                        </apiParam>
+                                                        <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                                          <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                                          <type>
+                                                            <booleanType/>
+                                                          </type>
+                                                        </apiParam>
+                                                        <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                                          <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                                          <type>
+                                                            <booleanType/>
+                                                          </type>
+                                                        </apiParam>
+                                                      </generatedParameters>
+                                                    </apiCall>
+                                                  </steps>
+                                                </clause>
+                                              </clauses>
+                                              <generatedParameters>
+                                                <apiParam group="target" name="uiTargetUrl" title="Web Page">
+                                                  <type>
+                                                    <textType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="969" title="Set the Lat/Long (Longitude) field to 1.00">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Lat_Long__Longitude__s&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DLat_Long__Longitude__s"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                                </argument>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">1.00</value>
+                                                </argument>
+                                                <argument id="blur">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="pressEnter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Set the Lat/Long (Longitude) field to 1.00</value>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="afterWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Account&amp;field=Lat_Long__Longitude__s" name="value" seq="10000" title="Value">
+                                                  <summary>The value to be populated.</summary>
+                                                  <type>
+                                                    <numericType>
+                                                      <constraints>
+                                                        <valueConstraint name="length">17</valueConstraint>
+                                                        <valueConstraint name="decimalPlaces">14</valueConstraint>
+                                                      </constraints>
+                                                    </numericType>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="970" title="Set the Lat/Long (Latitude) field to 1.00">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Lat_Long__Latitude__s&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DLat_Long__Latitude__s"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                                </argument>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">1.00</value>
+                                                </argument>
+                                                <argument id="blur">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="pressEnter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Set the Lat/Long (Latitude) field to 1.00</value>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="afterWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Account&amp;field=Lat_Long__Latitude__s" name="value" seq="10000" title="Value">
+                                                  <summary>The value to be populated.</summary>
+                                                  <type>
+                                                    <numericType>
+                                                      <constraints>
+                                                        <valueConstraint name="length">17</valueConstraint>
+                                                        <valueConstraint name="decimalPlaces">14</valueConstraint>
+                                                      </constraints>
+                                                    </numericType>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="971" title="Set the Address Line 1 field to 123">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Address_Address_1__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DAddress_Address_1__c"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                                </argument>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">123</value>
+                                                </argument>
+                                                <argument id="blur">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="pressEnter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Set the Address Line 1 field to 123</value>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="afterWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Account&amp;field=Address_Address_1__c" name="value" seq="10000" title="Value">
+                                                  <summary>The value to be populated.</summary>
+                                                  <type>
+                                                    <textType>
+                                                      <constraints>
+                                                        <valueConstraint name="maxLength">30</valueConstraint>
+                                                        <valueConstraint name="maxLines">1</valueConstraint>
+                                                      </constraints>
+                                                    </textType>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="972" title="Set the Account Use Type picklist to Bill To Only">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Account_Use_Type__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DAccount_Use_Type__c"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                                </argument>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">Bill To Only</value>
+                                                </argument>
+                                                <argument id="blur">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="pressEnter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Set the Account Use Type picklist to Bill To Only</value>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="afterWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Account&amp;field=Account_Use_Type__c" name="value" seq="10000" title="Value">
+                                                  <summary>The value to be populated.</summary>
+                                                  <type>
+                                                    <choiceType>
+                                                      <constraints>
+                                                        <valueConstraint name="boundedValues">Bill To Only:Bill To Only|Employer:Employer|Employer &amp; Bill To:Employer &amp; Bill To</valueConstraint>
+                                                        <valueConstraint name="unrestricted">true</valueConstraint>
+                                                      </constraints>
+                                                    </choiceType>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="973" title="Set the Invoice Name field to ASD TEST 123">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Invoice_Name__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DInvoice_Name__c"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                                </argument>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">ASD TEST 123</value>
+                                                </argument>
+                                                <argument id="blur">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="pressEnter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Set the Invoice Name field to ASD TEST 123</value>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="afterWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Account&amp;field=Invoice_Name__c" name="value" seq="10000" title="Value">
+                                                  <summary>The value to be populated.</summary>
+                                                  <type>
+                                                    <textType>
+                                                      <constraints>
+                                                        <valueConstraint name="maxLength">60</valueConstraint>
+                                                        <valueConstraint name="maxLines">1</valueConstraint>
+                                                      </constraints>
+                                                    </textType>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="974" title="Set the Account Name field to {AccountName}">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Name&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DName"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                                </argument>
+                                                <argument id="value">
+                                                  <value class="variable">
+                                                    <path element="AccountName"/>
+                                                  </value>
+                                                </argument>
+                                                <argument id="blur">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="pressEnter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Set the Account Name field to {AccountName}</value>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="afterWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Account&amp;field=Name" name="value" seq="10000" title="Value">
+                                                  <summary>The value to be populated.</summary>
+                                                  <type>
+                                                    <textType>
+                                                      <constraints>
+                                                        <valueConstraint name="maxLength">255</valueConstraint>
+                                                        <valueConstraint name="maxLines">1</valueConstraint>
+                                                      </constraints>
+                                                    </textType>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="975" title="Set the Organisation Group picklist to Charity">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Organisation_Group__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DOrganisation_Group__c"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                                </argument>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">Charity</value>
+                                                </argument>
+                                                <argument id="blur">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="pressEnter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Set the Organisation Group picklist to Charity</value>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="afterWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Account&amp;field=Organisation_Group__c" name="value" seq="10000" title="Value">
+                                                  <summary>The value to be populated.</summary>
+                                                  <type>
+                                                    <choiceType>
+                                                      <constraints>
+                                                        <valueConstraint name="boundedValues">--None--:--None--|Agency (LA):Agency (LA)|Agency (Other):Agency (Other)|Agency (Top Spenders):Agency (Top Spenders)|Charity:Charity|College:College|Company (FE):Company (FE)|Company (HE):Company (HE)|Company (Other):Company (Other)|Company (Primary):Company (Primary)|Company (Secondary):Company (Secondary)|Educational Body:Educational Body|In-house (ABC Teachers):In-house (ABC Teachers)|In-house (Smart Teachers):In-house (Smart Teachers)|In-house (TES Global):In-house (TES Global)|In-house (UniJobs):In-house (UniJobs)|In-house (Vision for Education):In-house (Vision for Education)|In-house (Wikispaces):In-house (Wikispaces)|LA:LA|Library:Library|Private Individual:Private Individual|School:School|University:University</valueConstraint>
+                                                        <valueConstraint name="unrestricted">true</valueConstraint>
+                                                      </constraints>
+                                                    </choiceType>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="976" title="Set the Customer Group picklist to Academy">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Customer_Group__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DCustomer_Group__c"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                                </argument>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">Academy</value>
+                                                </argument>
+                                                <argument id="blur">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="pressEnter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Set the Customer Group picklist to Academy</value>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="afterWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Account&amp;field=Customer_Group__c" name="value" seq="10000" title="Value">
+                                                  <summary>The value to be populated.</summary>
+                                                  <type>
+                                                    <choiceType>
+                                                      <constraints>
+                                                        <valueConstraint name="boundedValues">Academy:Academy|Academy Sponsor:Academy Sponsor|Federation:Federation|Further:Further|Further/Higher Ed:Further/Higher Ed|Further Education:Further Education|Government:Government|Head Office:Head Office|Higher:Higher|Higher Education:Higher Education|Ind. Prepatory:Ind. Prepatory|Independent MultiPhase:Independent MultiPhase|Independent Prep:Independent Prep|Independent PrePrep:Independent PrePrep|Independent Senior:Independent Senior|Independent Special:Independent Special|Intra Company:Intra Company|Limited Company:Limited Company|Local Education Authority:Local Education Authority|Middle:Middle|Multi-Phase:Multi-Phase|Non Limited Company:Non Limited Company|Non Reg. Charity:Non Reg. Charity|Nursery:Nursery|Other:Other|Other Department:Other Department|PLC Company:PLC Company|Primary:Primary|Private Individual:Private Individual|Pupil Referral Unit:Pupil Referral Unit|Registered Charity:Registered Charity|Religious Org.:Religious Org.|Religious Organisation:Religious Organisation|Secondary:Secondary|Secure Unit:Secure Unit|Sixth Form:Sixth Form|Special Needs:Special Needs|Special Schools:Special Schools|Trust:Trust|Union:Union</valueConstraint>
+                                                        <valueConstraint name="unrestricted">true</valueConstraint>
+                                                      </constraints>
+                                                    </choiceType>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="977" title="Click the Save button">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=save&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26action%3Dsave"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                                </argument>
+                                                <argument id="hover">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Click the Save button</value>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="afterWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" name="ApexSoqlQuery" testItemId="978" title="SOQL Query: select Account_Id__c from Account where Name='{AccountName}'=&gt;AccountRowsID">
+                                              <tags>
+                                                <string>disabled</string>
+                                              </tags>
+                                              <arguments>
+                                                <argument id="soqlQuery">
+                                                  <value class="compound">
+                                                    <parts>
+                                                      <value valueClass="string">select Account_Id__c from Account where Name='</value>
+                                                      <variable>
+                                                        <path element="AccountName"/>
+                                                      </variable>
+                                                      <value valueClass="string">'</value>
+                                                    </parts>
+                                                  </value>
+                                                </argument>
+                                                <argument id="apexConnectionName">
+                                                  <value class="value" valueClass="string">JobScience</value>
+                                                </argument>
+                                                <argument id="resultListName">
+                                                  <value class="value" valueClass="string">AccountRowsID</value>
+                                                </argument>
+                                                <argument id="resultScope">
+                                                  <value class="value" valueClass="string">Test</value>
+                                                </argument>
+                                              </arguments>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" name="ApexSoqlQuery" testItemId="979" title="SOQL Query: select Id\n    ,Name\n from Account where Name='{AccountName}'=&gt;AccountRows">
+                                              <arguments>
+                                                <argument id="soqlQuery">
+                                                  <value class="compound">
+                                                    <parts>
+                                                      <value valueClass="string">select Id\n    ,Name\n from Account where Name='</value>
+                                                      <variable>
+                                                        <path element="AccountName"/>
+                                                      </variable>
+                                                      <value valueClass="string">'</value>
+                                                    </parts>
+                                                  </value>
+                                                </argument>
+                                                <argument id="apexConnectionName">
+                                                  <value class="value" valueClass="string">JobScience</value>
+                                                </argument>
+                                                <argument id="resultListName">
+                                                  <value class="value" valueClass="string">AccountRows</value>
+                                                </argument>
+                                                <argument id="resultScope">
+                                                  <value class="value" valueClass="string">Test</value>
+                                                </argument>
+                                              </arguments>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.bundled.apis.io.Write" name="Write" testItemId="980" title="Write: {AccountRows.Id}=&gt;templates/CPQ_productTemplate_v2.xlsx">
+                                              <arguments>
+                                                <argument id="data">
+                                                  <value class="variable">
+                                                    <path element="AccountRows"/>
+                                                    <path element="Id"/>
+                                                  </value>
+                                                </argument>
+                                                <argument id="dataUrl">
+                                                  <value class="excelTarget" debug="true" sheetWriteMode="Update">
+                                                    <workbookPath class="value" valueClass="string">templates/CPQ_productTemplate_v2.xlsx</workbookPath>
+                                                    <worksheetName class="value" valueClass="string">Account</worksheetName>
+                                                  </value>
+                                                </argument>
+                                                <argument id="targetDescription">
+                                                  <value class="value" valueClass="string">templates/CPQ_productTemplate_v2.xlsx</value>
+                                                </argument>
+                                                <argument id="updateValueRange">
+                                                  <value class="value" valueClass="string">D</value>
+                                                </argument>
+                                                <argument id="updateColumnNames">
+                                                  <value class="value" valueClass="string">FirstColumnOfRange</value>
+                                                </argument>
+                                                <argument id="updateMatchType">
+                                                  <value class="value" valueClass="string">RowOrColNumber</value>
+                                                </argument>
+                                                <argument id="updateMatchLocator">
+                                                  <value class="value" valueClass="string">4</value>
+                                                </argument>
+                                              </arguments>
+                                              <expectedExceptions/>
+                                              <generatedParameters>
+                                                <apiParam group="result" name="updateValueRange" title="Values Range">
+                                                  <summary>The range of cells that needs to updated. If nothing is specified entire sheet is targeted</summary>
+                                                  <type>
+                                                    <textType>
+                                                      <constraints>
+                                                        <valueConstraint name="disableTemplateEditor">true</valueConstraint>
+                                                      </constraints>
+                                                    </textType>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="result" name="updateColumnNames" title="Column Names">
+                                                  <summary>Identifies where the column names are in the spreadsheet:</summary>
+                                                  <defaultValue>FirstRowOfRange</defaultValue>
+                                                  <type>
+                                                    <choiceType>
+                                                      <constraints>
+                                                        <valueConstraint name="boundedValues">FirstRowOfRange:Across the first row|FirstColumnOfRange:Down the first column</valueConstraint>
+                                                      </constraints>
+                                                    </choiceType>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="result" internal="true" name="updateMatchType" title="">
+                                                  <summary/>
+                                                  <defaultValue>RowOrColNumber</defaultValue>
+                                                  <type>
+                                                    <choiceType>
+                                                      <constraints>
+                                                        <valueConstraint name="boundedValues">RowOrColNumber:Match by Position|Where:Match on Condition|MatchColumns:Match by Columns</valueConstraint>
+                                                      </constraints>
+                                                    </choiceType>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="result" manuallyResolved="true" name="updateMatchLocator" title="Match Locator">
+                                                  <summary>Identifies which rows in the Range will be updated. \n It can either be a row number (where the first row = 1) or a filtering condition against one or more columns (e.g. {firstName = "Joe" and surname = "Bloggs"}.</summary>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                      </clauses>
+                                      <generatedParameters>
+                                        <apiParam group="result" name="sfUiTargetResultName" resultNameParameter="true" title="Result Name">
+                                          <summary>The name under which the resulting Object Id will be stored.</summary>
+                                          <type>
+                                            <textType/>
+                                          </type>
+                                          <resultValueClasses>
+                                            <string>ApexObjectId</string>
+                                          </resultValueClasses>
+                                        </apiParam>
+                                        <apiParam group="result" name="sfUiTargetResultScope" title="Result Scope">
+                                          <summary>The life-span of the resulting identifiers.</summary>
+                                          <type>
+                                            <choiceType>
+                                              <constraints>
+                                                <valueConstraint name="boundedValues">Global:Test Run|Folder:Test Folder|Test:Test Case|GroupStep:Group Step|Local:Test Step</valueConstraint>
+                                              </constraints>
+                                            </choiceType>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                            </apiCall>
+                            <caseCall testCaseId="7dff9ad2-71b8-42b4-a0d5-adcf445a1c1f" testItemId="948">
+                              <tags>
+                                <string>disabled</string>
+                              </tags>
+                              <arguments>
+                                <argument id="reuseConnectionName">
+                                  <value class="value" valueClass="string">JobScience</value>
+                                </argument>
+                                <argument id="Location__c">
+                                  <value class="variable">
+                                    <path element="ExcelData"/>
+                                    <path element="Region"/>
+                                  </value>
+                                </argument>
+                                <argument id="Phase">
+                                  <value class="variable" topLevel="true">
+                                    <path element="ExcelData"/>
+                                    <path element="SimplePhase"/>
+                                  </value>
+                                </argument>
+                                <argument id="Funding_Group__c">
+                                  <value class="variable">
+                                    <path element="ExcelData"/>
+                                    <path element="FundingGroup"/>
+                                  </value>
+                                </argument>
+                                <argument id="Phase__c">
+                                  <value class="variable">
+                                    <path element="ExcelData"/>
+                                    <path element="SimplePhase"/>
+                                  </value>
+                                </argument>
+                              </arguments>
+                              <outputArguments>
+                                <outputArgument id="AccountId">
+                                  <name class="value" valueClass="string">AccountId</name>
+                                </outputArgument>
+                                <outputArgument id="AccountRowsID">
+                                  <name class="value" valueClass="string">AccountRowsID</name>
+                                </outputArgument>
+                              </outputArguments>
+                            </caseCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="950" title="Create Object: Account=&gt;AccountId">
+                              <tags>
+                                <string>disabled</string>
+                              </tags>
+                              <arguments>
+                                <argument id="objectType">
+                                  <value class="value" valueClass="string">Account</value>
+                                </argument>
+                                <argument id="resultIdName">
+                                  <value class="value" valueClass="string">AccountId</value>
+                                </argument>
+                                <argument id="apexConnectionName">
+                                  <value class="value" valueClass="string">JobScience</value>
+                                </argument>
+                                <argument id="assignmentRuleId"/>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Test</value>
+                                </argument>
+                                <argument argId="fecc4d91-010c-43b5-a580-e46e78f8af46" id="Location__c">
+                                  <value class="variable">
+                                    <path element="ExcelData"/>
+                                    <path element="Region"/>
+                                  </value>
+                                </argument>
+                                <argument id="Lat_Long__Latitude__s">
+                                  <value class="value" valueClass="decimal">1.000</value>
+                                </argument>
+                                <argument id="Lat_Long__Longitude__s">
+                                  <value class="value" valueClass="decimal">1</value>
+                                </argument>
+                                <argument id="Address_Line_1_Unverified__c">
+                                  <value class="value" valueClass="string">123</value>
+                                </argument>
+                                <argument id="Account_Use_Type__c">
+                                  <value class="value" valueClass="string">Bill To Only</value>
+                                </argument>
+                                <argument id="Invoice_Name__c">
+                                  <value class="value" valueClass="string">ASD TEST 123</value>
+                                </argument>
+                                <argument id="Name">
+                                  <value class="variable">
+                                    <path element="AccountName"/>
+                                  </value>
+                                </argument>
+                                <argument id="Client_Type__c">
+                                  <value class="value" valueClass="string">Ag. Lge non-PPA/NPA 12.5%</value>
+                                </argument>
+                                <argument id="Customer_Group__c">
+                                  <value class="value" valueClass="string">Academy</value>
+                                </argument>
+                                <argument id="Organisation_Group__c">
+                                  <value class="value" valueClass="string">Company (FE)</value>
+                                </argument>
+                                <argument argId="8c7e7420-8306-4350-a81b-68b4e501f78b" id="Phase__c">
+                                  <value class="variable">
+                                    <path element="ExcelData"/>
+                                    <path element="SimplePhase"/>
+                                  </value>
+                                </argument>
+                                <argument argId="33cac6f2-3bec-4d3b-bd43-1948a4ee1601" id="Funding_Group__c">
+                                  <value class="variable">
+                                    <path element="ExcelData"/>
+                                    <path element="FundingGroup"/>
+                                  </value>
+                                </argument>
+                              </arguments>
+                              <parameterValueSources/>
+                              <parameterGeneratorProperties>
+                                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">JobScience</propertyValue>
+                                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Account</propertyValue>
+                              </parameterGeneratorProperties>
+                              <generatedParameters>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Location__c" name="Location__c" title="Location__c">
+                                  <summary>UK - Select LA  / Australia - Select State / Other - Select Country</summary>
+                                </apiParam>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Lat_Long__Latitude__s" name="Lat_Long__Latitude__s" title="Lat_Long__Latitude__s"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Lat_Long__Longitude__s" name="Lat_Long__Longitude__s" title="Lat_Long__Longitude__s"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Address_Line_1_Unverified__c" name="Address_Line_1_Unverified__c" title="Address_Line_1_Unverified__c"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Account_Use_Type__c" name="Account_Use_Type__c" title="Account_Use_Type__c">
+                                  <summary>Identifies where account can be used when booking an order. For Tes Institute Pathway Tutor select 'Employer'. For a Learner enrolled on a course select 'Bill to Only'</summary>
+                                </apiParam>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Invoice_Name__c" name="Invoice_Name__c" title="Invoice_Name__c">
+                                  <summary>Limited to 60 characters. CAPITAL LETTERS ONLY</summary>
+                                </apiParam>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Name" name="Name" title="Name"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Client_Type__c" name="Client_Type__c" title="Client_Type__c">
+                                  <summary>MSL Data field</summary>
+                                </apiParam>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Customer_Group__c" name="Customer_Group__c" title="Customer_Group__c">
+                                  <summary>MSL Data field</summary>
+                                </apiParam>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Organisation_Group__c" name="Organisation_Group__c" title="Organisation_Group__c"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Phase__c" name="Phase__c" title="Phase__c"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Funding_Group__c" name="Funding_Group__c" title="Funding_Group__c">
+                                  <summary>If Independent, this is a fee paying school</summary>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.bdd.When" name="When" testItemId="807" title="When: I add the Quote &amp; Subsciption">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">I add the Quote &amp; Subsciption</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="808">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="688" title="AddQuote">
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">AddQuote</value>
+                </argument>
+              </arguments>
+              <parameterValueSources/>
+              <clauses>
+                <clause name="hidden" testItemId="689">
+                  <steps>
+                    <caseCall testCaseId="75c48f19-b9af-4e36-8fe9-5040496d0775" testItemId="690">
+                      <arguments>
+                        <argument id="reuseConnectionName">
+                          <value class="value" valueClass="string">JobScience</value>
+                        </argument>
+                        <argument id="list">
+                          <value class="value" valueClass="string">List</value>
+                        </argument>
+                        <argument id="sfUiTargetObjectId">
+                          <value class="variable">
+                            <path element="OpportunityId"/>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </caseCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="747" title="Add Subscription">
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">Add Subscription</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="748">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="749" title="On Quote page">
+                      <arguments>
+                        <argument id="uiConnectionName">
+                          <value class="value" valueClass="string">JobScience</value>
+                        </argument>
+                        <argument id="target">
+                          <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.Quote"/>
+                        </argument>
+                        <argument id="navigate">
+                          <value class="value" valueClass="string">Dont</value>
+                        </argument>
+                        <argument id="targetDescription">
+                          <value class="value" valueClass="string">On Quote page</value>
+                        </argument>
+                        <argument id="windowSelection">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="windowSize">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="closeWindow"/>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="uiTargetUrl"/>
+                      </arguments>
+                      <clauses>
+                        <clause name="substeps" testItemId="692">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="693" title="Click the Add Subscription">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:pageobject:field?field=AddSubscription&amp;pageId=pageobjects.Quote"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                </argument>
+                                <argument id="hover">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Click the Add Subscription</value>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="autoRetry"/>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                      <generatedParameters>
+                        <apiParam group="target" name="uiTargetUrl" title="Web Page">
+                          <type>
+                            <textType/>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.bdd.Then" name="Then" testItemId="809" title="Then: I should be able see the corresponding bundles">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">I should be able see the corresponding bundles</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="60">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="666" title="VerifyProductConfig">
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">VerifyProductConfig</value>
+                </argument>
+              </arguments>
+              <parameterValueSources>
+                <parameterValueSource variableName="ExcelData" variableScope="Test">
+                  <cacheToken>C:\\Users\\sjaffar\\Provar\\Provar1.8.10.17\\Salesforce-1\\templates\\CPQ_productTemplate_v1.xlsx;1493818608955</cacheToken>
+                  <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+                    <workbookPath class="value" valueClass="string">templates/CPQ_productTemplate_v1.xlsx</workbookPath>
+                    <worksheetName class="value" valueClass="string">Product</worksheetName>
+                    <valuesRange class="value" valueClass="string">A1:E17</valuesRange>
+                  </sourceValue>
+                </parameterValueSource>
+              </parameterValueSources>
+              <clauses>
+                <clause name="hidden" testItemId="667">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="743" title="On Opp_ Prod page">
+                      <arguments>
+                        <argument id="uiConnectionName">
+                          <value class="value" valueClass="string">JobScience</value>
+                        </argument>
+                        <argument id="target">
+                          <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.Opp_Prod"/>
+                        </argument>
+                        <argument id="targetDescription">
+                          <value class="value" valueClass="string">On Opp_ Prod page</value>
+                        </argument>
+                        <argument id="navigate">
+                          <value class="value" valueClass="string">Always</value>
+                        </argument>
+                        <argument id="windowSelection">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="windowSize">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="closeWindow"/>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="uiTargetUrl"/>
+                      </arguments>
+                      <clauses>
+                        <clause name="substeps" testItemId="4">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="817" title="Call the selectProduct method">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:pageobject:method?operation=selectProduct&amp;pageId=pageobjects.Opp_Prod"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=invoke"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Call the selectProduct method</value>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="string">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="string">false</value>
+                                </argument>
+                                <argument id="param_arg0">
+                                  <value class="value" valueClass="string">Tes Essentials Recruitment Subscription</value>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="autoRetry"/>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" name="param_arg0" title="prodcutLabel">
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="848" title="Call the extractAddons method">
+                              <tags/>
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:pageobject:method?operation=extractAddons&amp;pageId=pageobjects.Opp_Prod"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=invoke"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Call the extractAddons method</value>
+                                </argument>
+                                <argument id="beforeWait"/>
+                                <argument id="afterWait"/>
+                                <argument id="autoRetry"/>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="string">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="string">false</value>
+                                </argument>
+                                <argument id="param_resultName">
+                                  <value class="value" valueClass="string">ListAddOns</value>
+                                </argument>
+                                <argument id="param_resultScope">
+                                  <value class="value" valueClass="string">Test</value>
+                                </argument>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" name="param_resultName" seq="1001" title="Result Name">
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="param_resultScope" seq="1002" title="Result Scope">
+                                  <defaultValue>Test</defaultValue>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="boundedValues">Global:Test Run|Folder:Test Folder|Test:Test Case|GroupStep:Group Step|Local:Test Step</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="849" title="Call the selectProduct2 method">
+                              <tags/>
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:pageobject:method?operation=selectProduct2&amp;pageId=pageobjects.Opp_Prod"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=invoke"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Call the selectProduct2 method</value>
+                                </argument>
+                                <argument id="beforeWait"/>
+                                <argument id="afterWait"/>
+                                <argument id="autoRetry"/>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="string">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="string">false</value>
+                                </argument>
+                                <argument id="param_arg0"/>
+                                <argument id="param_resultName">
+                                  <value class="value" valueClass="string">abc</value>
+                                </argument>
+                                <argument id="param_resultScope">
+                                  <value class="value" valueClass="string">Test</value>
+                                </argument>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" name="param_resultName" seq="1001" title="Result Name">
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="param_resultScope" seq="1002" title="Result Scope">
+                                  <defaultValue>Test</defaultValue>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="boundedValues">Global:Test Run|Folder:Test Folder|Test:Test Case|GroupStep:Group Step|Local:Test Step</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                      <generatedParameters>
+                        <apiParam group="target" name="uiTargetUrl" title="Web Page">
+                          <type>
+                            <textType/>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="833" title="On Quote page">
+                      <arguments>
+                        <argument id="uiConnectionName">
+                          <value class="value" valueClass="string">JobScience</value>
+                        </argument>
+                        <argument id="target">
+                          <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.Quote"/>
+                        </argument>
+                        <argument id="navigate">
+                          <value class="value" valueClass="string">Always</value>
+                        </argument>
+                        <argument id="targetDescription">
+                          <value class="value" valueClass="string">On Quote page</value>
+                        </argument>
+                        <argument id="windowSelection">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="windowSize">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="closeWindow"/>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="uiTargetUrl"/>
+                      </arguments>
+                      <clauses>
+                        <clause name="substeps" testItemId="834">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="854" title="Click the Select">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:pageobject:field?field=Select&amp;pageId=pageobjects.Quote"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                </argument>
+                                <argument id="hover">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Click the Select</value>
+                                </argument>
+                                <argument id="beforeWait"/>
+                                <argument id="afterWait"/>
+                                <argument id="autoRetry"/>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                      <generatedParameters>
+                        <apiParam group="target" name="uiTargetUrl" title="Web Page">
+                          <type>
+                            <textType/>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="843" title="For Each: {ExcelData}=&gt;var">
+                      <tags/>
+                      <arguments>
+                        <argument argId="83d9f76f-1e90-4530-805c-f50d66ff14d8" id="list">
+                          <value class="variable">
+                            <path element="ExcelData"/>
+                          </value>
+                        </argument>
+                        <argument id="fromItem">
+                          <value class="value" valueClass="decimal">1</value>
+                        </argument>
+                        <argument id="valueName">
+                          <value class="value" valueClass="string">var</value>
+                        </argument>
+                        <argument id="continueOnFailure"/>
+                      </arguments>
+                      <clauses>
+                        <clause name="substeps" testItemId="844">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="845" title="With Row">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">JobScience</value>
+                                </argument>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="sf:ui:locator:row?table=addProd%2FSearchResults%2FSearchTable"/>
+                                </argument>
+                                <argument id="uiRowLocator">
+                                  <value class="eq">
+                                    <lhs class="variable">
+                                      <path element="Product2_Name"/>
+                                    </lhs>
+                                    <rhs class="variable" topLevel="true">
+                                      <path element="var"/>
+                                      <path element="Product"/>
+                                    </rhs>
+                                  </value>
+                                </argument>
+                                <argument id="locatorDescription">
+                                  <value class="value" valueClass="string">With Row</value>
+                                </argument>
+                                <argument id="failIfNotFound">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                                <argument id="debugRowLocator"/>
+                                <argument id="resultName">
+                                  <value class="value" valueClass="string">Row</value>
+                                </argument>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Local</value>
+                                </argument>
+                                <argument id="autoPaginate"/>
+                                <argument id="autoRetry"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="846">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="847" title="Call the selectProduct method">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:pageobject:method?operation=selectProduct&amp;pageId=pageobjects.Opp_Prod"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=invoke"/>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Call the selectProduct method</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore">
+                                          <value class="value" valueClass="string">false</value>
+                                        </argument>
+                                        <argument id="captureAfter">
+                                          <value class="value" valueClass="string">false</value>
+                                        </argument>
+                                        <argument id="param_arg0">
+                                          <value class="eq">
+                                            <lhs class="variable">
+                                              <path element="Product2_Name"/>
+                                            </lhs>
+                                            <rhs class="variable" topLevel="true">
+                                              <path element="var"/>
+                                              <path element="Product"/>
+                                            </rhs>
+                                          </value>
+                                        </argument>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="param_arg0" title="productLabel">
+                                          <type>
+                                            <textType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="options" name="autoRetry" title="Auto Retry">
+                                  <summary>Whether to wait for the rows to be visible.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+  <tags>
+    <string>disabled</string>
+  </tags>
+</testCase>

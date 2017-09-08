@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite failures="5" hostname="DT2659" id="0" name="JobScience/tests" package="" skipped="0" tests="52" time="4742.649" timestamp="Thu Mar 30 12:39:20 BST 2017">
+	    <properties>
+		      <property name="excludeCallableTestCases" value="true" />
+
+		      <property name="testEnvironment" value="TestEnv" />
+
+		      <property name="pluginOutputLevel" value="WARNING" />
+
+		      <property name="projectPath" value=".." />
+
+		      <property name="salesforceMetadataCache" value="Reuse" />
+
+		      <property name="resultsPathDisposition" value="Increment" />
+
+		      <property name="testOutputLevel" value="WARNING" />
+
+		      <property name="webBrowserType" value="Google Chrome" />
+
+		      <property name="resultsPath" value="../ANT/Results" />
+
+		      <property name="webBrowserConfiguration" value="Full Screen" />
+
+		      <property name="projectCachePath" value="../../.provarCaches" />
+
+	    </properties>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\MAT\47-VerifyOpportunityInAccountGroup.testcase" name="47-VerifyOpportunityInAccountGroup.testcase" time="42.555">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\MAT\48-VerifyOpportunityInPrincipalAccount.testcase" name="48-VerifyOpportunityInPrincipalAccount.testcase" time="50.453">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\MAT\49-VerifyHasBeenOpportuntiyInAccount.testcase" name="49-VerifyHasBeenOpportuntiyInAccount.testcase" time="133.685">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\MAT\50-AddProductsToOopportunityInPrincipalAccount.testcase" name="50-AddProductsToOopportunityInPrincipalAccount.testcase" time="81.35">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\MAT\51-AddProductsToOopportunityInMasterAccount.testcase" name="51-AddProductsToOopportunityInMasterAccount.testcase" time="175.621">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\MAT\52-VerifyAccountGroupName.testcase" name="52-VerifyAccountGroupName.testcase" time="129.7">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\MAT\53-VerifyPrincipalAccountName.testcase" name="53-VerifyPrincipalAccountName.testcase" time="138.424">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\MAT\54-VerifyNewOpportunityInPrincipalAccountandAG.testcase" name="54-VerifyNewOpportunityInPrincipalAccountandAG.testcase" time="183.085">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\MAT\55-VerifyNewOpportunityFromFeedInPrincipalAccountandAG.testcase" name="55-VerifyNewOpportunityFromFeedInPrincipalAccountandAG.testcase" time="78.884">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\SameOrganisation\59-VerifyAccountGroupName.testcase" name="59-VerifyAccountGroupName.testcase" time="27.596">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\SameOrganisation\60-VerifyPrincipalAccountName.testcase" name="60-VerifyPrincipalAccountName.testcase" time="33.636">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\SameOrganisation\61-VerifyNewOpportunityInPrincipalAccountandAG.testcase" name="61-VerifyNewOpportunityInPrincipalAccountandAG.testcase" time="77.346">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\Trust\62-VerifyAccountGroupName.testcase" name="62-VerifyAccountGroupName.testcase" time="28.175">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\Trust\63-VerifyPrincipalAccountName.testcase" name="63-VerifyPrincipalAccountName.testcase" time="33.59">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\AccountGroups\Trust\64-VerifyNewOpportunityInPrincipalAccountandAG.testcase" name="64-VerifyNewOpportunityInPrincipalAccountandAG.testcase" time="78.957">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contacts\367a-UpdateStandaradEmail.testcase" name="367a-UpdateStandaradEmail.testcase" time="30.604">
+		      <failure message="Execution failed"><![CDATA[Assertion Failed.  EqualTo provardepartmental@gmail.com]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contacts\367d-MAUpdateStandaradEmailondeleteAllEmail.testcase" name="367d-MAUpdateStandaradEmailondeleteAllEmail.testcase" time="44.586">
+		      <failure message="Execution failed"><![CDATA[Assertion failed.  (expected) null =   (actual)]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contracts\39-ActivateGroupContract.testcase" name="39-ActivateGroupContract.testcase" time="74.099">
+		      <failure message="Execution failed"><![CDATA[The row locator did not match any rows.]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contracts\40-ActivateChildContract.testcase" name="40-ActivateChildContract.testcase" time="7.627">
+		      <failure message="Execution failed"><![CDATA[The excel file doesn't exist.  Path: C:UserssjaffarProvar1.8.9.07Workspace2JobSciencetemplatesHiring Solutions Regression Cycle-28th Sep.xlsx, Absolute Path: C:UserssjaffarProvar1.8.9.07Workspace2JobSciencetemplatesHiring Solutions Regression Cycle-28th Sep.xlsx.]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\07-CreateEvent-RecruitmentSubsRDVisit.testcase" name="07-CreateEvent-RecruitmentSubsRDVisit.testcase" time="69.744">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\08-DeleteEvent-RecruitmentSubsRDVisit.testcase" name="08-DeleteEvent-RecruitmentSubsRDVisit.testcase" time="89.4">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\09-CreateEvent-RecruitmentSubsScheduledCall.testcase" name="09-CreateEvent-RecruitmentSubsScheduledCall.testcase" time="70.741">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\10-DeleteEvent-RecruitmentSubsScheduledCall.testcase" name="10-DeleteEvent-RecruitmentSubsScheduledCall.testcase" time="85.156">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\11-CreateEvent-Subs6MonthRenewalVisit.testcase" name="11-CreateEvent-Subs6MonthRenewalVisit.testcase" time="46.622">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\12-DeleteEvent-Subs6MonthRenewalVisit.testcase" name="12-DeleteEvent-Subs6MonthRenewalVisit.testcase" time="63.606">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\13-CreateEvent-Subs6MonthScheduledRenewalCall.testcase" name="13-CreateEvent-Subs6MonthScheduledRenewalCall.testcase" time="46.863">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\14-DeleteEvent-Subs6MonthScheduledRenewalCall.testcase" name="14-DeleteEvent-Subs6MonthScheduledRenewalCall.testcase" time="71.704">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\15-CreateEvent-CALL.testcase" name="15-CreateEvent-CALL.testcase" time="51.391">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\16-CreateEvent-MEETING.testcase" name="16-CreateEvent-MEETING.testcase" time="51.304">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\17-CreateEvent-OTHER.testcase" name="17-CreateEvent-OTHER.testcase" time="50.984">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\18-DeleteEventRecruitmentSubsRDVisit.testcase" name="18-DeleteEventRecruitmentSubsRDVisit.testcase" time="170.84">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\19-DeleteEventRecruitmentSubsScheduledCall.testcase" name="19-DeleteEventRecruitmentSubsScheduledCall.testcase" time="169.515">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\20-DeleteEventSub6MonthRenewalVisit.testcase" name="20-DeleteEventSub6MonthRenewalVisit.testcase" time="151.018">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\21-DeleteEventSubs6MonthScheduledRenewalCall.testcase" name="21-DeleteEventSubs6MonthScheduledRenewalCall.testcase" time="150.7">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\22-DeleteEventCall.testcase" name="22-DeleteEventCall.testcase" time="163.931">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\23-DeleteEventMeeting.testcase" name="23-DeleteEventMeeting.testcase" time="163.066">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\24-DeleteEventOther.testcase" name="24-DeleteEventOther.testcase" time="162.432">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\25-UpdateToEarlierDate.testcase" name="25-UpdateToEarlierDate.testcase" time="138.832">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\26-SingleEvent.testcase" name="26-SingleEvent.testcase" time="140.522">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\27-UpdateEventToIncorrectName.testcase" name="27-UpdateEventToIncorrectName.testcase" time="131.13">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\28-UpdateEvent2ToIncorrectName.testcase" name="28-UpdateEvent2ToIncorrectName.testcase" time="110.07">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Events\29-UpdateSubjectName.testcase" name="29-UpdateSubjectName.testcase" time="65.703">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Opportunity\30-OpportunityStageNew.testcase" name="30-OpportunityStageNew.testcase" time="99.74">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Opportunity\31-OpportunityStageICM.testcase" name="31-OpportunityStageICM.testcase" time="63.559">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Opportunity\32-OpportunityStageAB.testcase" name="32-OpportunityStageAB.testcase" time="68.823">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Opportunity\33-OpportunityStageAB.testcase" name="33-OpportunityStageAB.testcase" time="77.465">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Opportunity\34-OpportunityStageAB.testcase" name="34-OpportunityStageAB.testcase" time="98.763">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Opportunity\35-OpportunityStageNotChanged.testcase" name="35-OpportunityStageNotChanged.testcase" time="41.766">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Opportunity\37-AddMultipleProductToOpportunity.testcase" name="37-AddMultipleProductToOpportunity.testcase" time="88.445">
+		      <failure message="Execution failed"><![CDATA[The row locator did not match any rows.]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Opportunity\38-VerifyGroupOpportunityName.testcase" name="38-VerifyGroupOpportunityName.testcase" time="23.615">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Reports\45-VerifyCallType.testcase" name="45-VerifyCallType.testcase" time="54.343">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Reports\46-VerifyOutboundCallSuccess.testcase" name="46-VerifyOutboundCallSuccess.testcase" time="56.267">
+	</testcase>
+
+  </testsuite>
+</testsuites>

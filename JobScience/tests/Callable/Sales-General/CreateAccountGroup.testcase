@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="0" registryId="bef0cc97-1ec8-484a-bbf4-9a714096dd31" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: JobScience (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Sales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument argId="0c0d3705-d3a0-4f00-a8a6-58207dda1448" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Reuse</value>
+        </argument>
+        <argument id="vfDebug"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="3" title="Set Values: AccountGroupName">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">AccountGroupName</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="compound">
+                  <parts>
+                    <value valueClass="string">St bedes</value>
+                    <funcCall id="UniqueId">
+                      <argument id="length">
+                        <value class="value" valueClass="decimal">4</value>
+                      </argument>
+                      <argument id="format">
+                        <value class="value" valueClass="string">ALPHANUMERIC</value>
+                      </argument>
+                    </funcCall>
+                  </parts>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="2" title="Create Object: Account_Group__c=&gt;AccountGroupId">
+      <tags/>
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Account_Group__c</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">AccountGroupId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="Name">
+          <value class="variable">
+            <path element="AccountGroupName"/>
+          </value>
+        </argument>
+        <argument id="CurrencyIsoCode">
+          <value class="value" valueClass="string">GBP</value>
+        </argument>
+        <argument id="RecordTypeId">
+          <value class="value" valueClass="string">School Group</value>
+        </argument>
+        <argument argId="a0fe3228-7fb1-42a3-9fd2-1d6e33d9ac77" id="Principal_Account__c">
+          <value class="variable">
+            <path element="Principal_Account__c"/>
+          </value>
+        </argument>
+        <argument id="CASESAFEID_PrincipalAccount__c">
+          <value class="value" valueClass="string">0012600000FtsJzAAJ</value>
+        </argument>
+        <argument id="Group_Status__c">
+          <value class="value" valueClass="string">Open</value>
+        </argument>
+        <argument argId="ebe9404e-d29f-4e5b-ab66-3a8481539886" id="Group_Type__c">
+          <value class="variable">
+            <path element="Group_Type__c"/>
+          </value>
+        </argument>
+        <argument argId="496e51c5-ca8c-4989-b6a7-1f5d4db71f16" id="AccountId_PrincipalAccount__c">
+          <value class="variable">
+            <path element="AccountId_PrincipalAccount__c"/>
+          </value>
+        </argument>
+        <argument id="LastUpdateToAWS__c">
+          <value class="value" valueClass="date">1471000231000</value>
+        </argument>
+        <argument id="SuccessStatusOfLastAWSUpdate__c">
+          <value class="value" valueClass="string">Success</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">JobScience</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Account_Group__c</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=Name" name="Name" title="Name"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=CurrencyIsoCode" name="CurrencyIsoCode" title="CurrencyIsoCode"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=RecordTypeId" name="RecordTypeId" title="RecordTypeId"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=Principal_Account__c" name="Principal_Account__c" title="Principal_Account__c">
+          <summary>The principal account in this group, from which the group inherits its name.</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=CASESAFEID_PrincipalAccount__c" name="CASESAFEID_PrincipalAccount__c" title="CASESAFEID_PrincipalAccount__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=Group_Status__c" name="Group_Status__c" title="Group_Status__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=Group_Type__c" name="Group_Type__c" title="Group_Type__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=AccountId_PrincipalAccount__c" name="AccountId_PrincipalAccount__c" title="AccountId_PrincipalAccount__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=LastUpdateToAWS__c" name="LastUpdateToAWS__c" title="LastUpdateToAWS__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=SuccessStatusOfLastAWSUpdate__c" name="SuccessStatusOfLastAWSUpdate__c" title="SuccessStatusOfLastAWSUpdate__c"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:0c0d3705-d3a0-4f00-a8a6-58207dda1448" name="reuseConnectionName" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:a0fe3228-7fb1-42a3-9fd2-1d6e33d9ac77" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=Principal_Account__c" name="Principal_Account__c" title="Principal_Account__c">
+      <summary>The principal account in this group, from which the group inherits its name.</summary>
+    </param>
+    <param linkedToUrl="provar:hasvalue:496e51c5-ca8c-4989-b6a7-1f5d4db71f16" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=AccountId_PrincipalAccount__c" name="AccountId_PrincipalAccount__c" title="AccountId_PrincipalAccount__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:ebe9404e-d29f-4e5b-ab66-3a8481539886" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=Group_Type__c" name="Group_Type__c" title="Group_Type__c">
+      <summary/>
+    </param>
+  </params>
+  <outputParams>
+    <param name="AccountGroupId" title="AccountGroupId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+            <valueConstraint name="regex"/>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="AccountGroupId"/>
+      </sourceValue>
+    </param>
+  </outputParams>
+  <args>
+    <argument id="reuseConnectionName"/>
+    <argument id="Principal_Account__c">
+      <value class="value" valueClass="string">0012600000FtsJzAAJ</value>
+    </argument>
+    <argument id="AccountId_PrincipalAccount__c">
+      <value class="value" valueClass="string">0000152031</value>
+    </argument>
+    <argument id="Group_Type__c">
+      <value class="value" valueClass="string">Multi-Academy Trust</value>
+    </argument>
+  </args>
+  <outputArgs>
+    <outputArgument id="AccountGroupId">
+      <name class="value" valueClass="string">AccountGroupId</name>
+    </outputArgument>
+  </outputArgs>
+</testCase>

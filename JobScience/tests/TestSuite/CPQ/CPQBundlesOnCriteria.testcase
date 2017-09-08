@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="23">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: JobScience (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Sales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="vfDebug"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.bdd.Given" name="Given" testItemId="53" title="Given: I create account with Region, simple phase &amp; funding Group ">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">I create account with Region, simple phase &amp; funding Group </value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="54">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="878" title="ReadExcel">
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">ReadExcel</value>
+                </argument>
+              </arguments>
+              <parameterValueSources>
+                <parameterValueSource variableName="ExcelDataMain" variableScope="Test">
+                  <cacheToken>C:/Users/preet/Downloads/CPQ_productTemplate_v2 (1).xlsx;1496234555143</cacheToken>
+                  <cachedParameters>
+                    <apiParam name="RowNumber"/>
+                    <apiParam name="Region"/>
+                    <apiParam name="SimplePhase"/>
+                    <apiParam name="FundingGroup"/>
+                    <apiParam name="ID_Account"/>
+                  </cachedParameters>
+                  <sourceValue class="excelTarget" debug="true" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+                    <workbookPath class="value" valueClass="string">templates/CPQ_productTemplate_v2.xlsx</workbookPath>
+                    <worksheetName class="value" valueClass="string">Account</worksheetName>
+                    <valuesRange class="value" valueClass="string">A1:D96</valuesRange>
+                  </sourceValue>
+                </parameterValueSource>
+              </parameterValueSources>
+              <clauses>
+                <clause name="hidden" testItemId="24"/>
+              </clauses>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="869" title="For Each: {ExcelDataMain}=&gt;var">
+              <arguments>
+                <argument id="list">
+                  <value class="variable">
+                    <path element="ExcelDataMain"/>
+                  </value>
+                </argument>
+                <argument id="fromItem">
+                  <value class="value" valueClass="decimal">1</value>
+                </argument>
+                <argument id="valueName">
+                  <value class="value" valueClass="string">var</value>
+                </argument>
+                <argument id="continueOnFailure">
+                  <value class="value" valueClass="boolean">true</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="substeps" testItemId="28">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="855" title="CreateAccount">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">CreateAccount</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="856">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="890" title="Set Values: AccountName">
+                              <arguments>
+                                <argument id="values">
+                                  <value class="valueList" mutable="Mutable">
+                                    <namedValues mutable="Mutable">
+                                      <namedValue name="valuePath">
+                                        <value class="value" valueClass="string">AccountName</value>
+                                      </namedValue>
+                                      <namedValue name="value">
+                                        <value class="compound">
+                                          <parts>
+                                            <value valueClass="string">ProvarTest </value>
+                                            <funcCall id="UniqueId">
+                                              <argument id="length">
+                                                <value class="value" valueClass="decimal">4</value>
+                                              </argument>
+                                              <argument id="format">
+                                                <value class="value" valueClass="string">ALPHANUMERIC</value>
+                                              </argument>
+                                            </funcCall>
+                                          </parts>
+                                        </value>
+                                      </namedValue>
+                                      <namedValue name="valueScope">
+                                        <value class="value" valueClass="string">Test</value>
+                                      </namedValue>
+                                    </namedValues>
+                                  </value>
+                                </argument>
+                              </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="889" title="Create Object: Account=&gt;AccountId">
+                              <arguments>
+                                <argument id="objectType">
+                                  <value class="value" valueClass="string">Account</value>
+                                </argument>
+                                <argument id="resultIdName">
+                                  <value class="value" valueClass="string">AccountId</value>
+                                </argument>
+                                <argument id="apexConnectionName">
+                                  <value class="value" valueClass="string">JobScience</value>
+                                </argument>
+                                <argument id="assignmentRuleId"/>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Test</value>
+                                </argument>
+                                <argument id="Name">
+                                  <value class="variable">
+                                    <path element="AccountName"/>
+                                  </value>
+                                </argument>
+                                <argument id="Invoice_Name__c">
+                                  <value class="value" valueClass="string">ASD TEST 123</value>
+                                </argument>
+                                <argument id="Account_Use_Type__c">
+                                  <value class="value" valueClass="string">Bill To Only</value>
+                                </argument>
+                                <argument id="Lat_Long__Longitude__s">
+                                  <value class="value" valueClass="decimal">1.00</value>
+                                </argument>
+                                <argument id="Lat_Long__Latitude__s">
+                                  <value class="value" valueClass="decimal">1.0</value>
+                                </argument>
+                                <argument id="Customer_Group__c">
+                                  <value class="value" valueClass="string">Academy</value>
+                                </argument>
+                                <argument id="Organisation_Group__c">
+                                  <value class="value" valueClass="string">College</value>
+                                </argument>
+                                <argument id="Funding_Group__c">
+                                  <value class="variable">
+                                    <path element="var"/>
+                                    <path element="FundingGroup"/>
+                                  </value>
+                                </argument>
+                                <argument id="Business_Phase__c">
+                                  <value class="variable">
+                                    <path element="var"/>
+                                    <path element="SimplePhase"/>
+                                  </value>
+                                </argument>
+                                <argument id="Address_Address_1__c">
+                                  <value class="value" valueClass="string">123</value>
+                                </argument>
+                                <argument id="Location__c">
+                                  <value class="variable">
+                                    <path element="var"/>
+                                    <path element="Region"/>
+                                  </value>
+                                </argument>
+                              </arguments>
+                              <parameterValueSources/>
+                              <parameterGeneratorProperties>
+                                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">JobScience</propertyValue>
+                                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Account</propertyValue>
+                              </parameterGeneratorProperties>
+                              <generatedParameters>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Name" name="Name" title="Name"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Invoice_Name__c" name="Invoice_Name__c" title="Invoice_Name__c">
+                                  <summary>Limited to 60 characters. CAPITAL LETTERS ONLY</summary>
+                                </apiParam>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Account_Use_Type__c" name="Account_Use_Type__c" title="Account_Use_Type__c">
+                                  <summary>Identifies where account can be used when booking an order. For Tes Institute Pathway Tutor select 'Employer'. For a Learner enrolled on a course select 'Bill to Only'</summary>
+                                </apiParam>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Lat_Long__Longitude__s" name="Lat_Long__Longitude__s" title="Lat_Long__Longitude__s"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Lat_Long__Latitude__s" name="Lat_Long__Latitude__s" title="Lat_Long__Latitude__s"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Customer_Group__c" name="Customer_Group__c" title="Customer_Group__c">
+                                  <summary>MSL Data field</summary>
+                                </apiParam>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Organisation_Group__c" name="Organisation_Group__c" title="Organisation_Group__c"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Funding_Group__c" name="Funding_Group__c" title="Funding_Group__c">
+                                  <summary>If Independent, this is a fee paying school</summary>
+                                </apiParam>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Business_Phase__c" name="Business_Phase__c" title="Business_Phase__c">
+                                  <summary>This is a 'true' phase of a school. The business has agreed that this will be used to classify schools within the map.</summary>
+                                </apiParam>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Address_Address_1__c" name="Address_Address_1__c" title="Address_Address_1__c">
+                                  <summary>Limited to 30 characters</summary>
+                                </apiParam>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Location__c" name="Location__c" title="Location__c">
+                                  <summary>UK - Select LA  / Australia - Select State / Other - Select Country</summary>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="864" title="CreateOpportunity">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">CreateOpportunity</value>
+                        </argument>
+                      </arguments>
+                      <parameterValueSources/>
+                      <clauses>
+                        <clause name="hidden" testItemId="865">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="868" title="Create Object: Opportunity=&gt;OpportunityId">
+                              <tags/>
+                              <arguments>
+                                <argument id="objectType">
+                                  <value class="value" valueClass="string">Opportunity</value>
+                                </argument>
+                                <argument id="resultIdName">
+                                  <value class="value" valueClass="string">OpportunityId</value>
+                                </argument>
+                                <argument id="apexConnectionName">
+                                  <value class="value" valueClass="string">JobScience</value>
+                                </argument>
+                                <argument id="assignmentRuleId"/>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Test</value>
+                                </argument>
+                                <argument id="Name">
+                                  <value class="value" valueClass="string">ProvarTest V3GI Group Recruitment Subs</value>
+                                </argument>
+                                <argument id="StageName">
+                                  <value class="value" valueClass="string">New</value>
+                                </argument>
+                                <argument id="CloseDate">
+                                  <value class="value" valueClass="date">1525996800000</value>
+                                </argument>
+                                <argument id="RecordTypeId">
+                                  <value class="value" valueClass="string">Subscription Opportunity</value>
+                                </argument>
+                                <argument id="AccountId">
+                                  <value class="variable">
+                                    <path element="AccountId"/>
+                                  </value>
+                                </argument>
+                                <argument id="LeadSource">
+                                  <value class="value" valueClass="string">Campaign</value>
+                                </argument>
+                              </arguments>
+                              <parameterGeneratorProperties>
+                                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">JobScience</propertyValue>
+                                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Opportunity</propertyValue>
+                              </parameterGeneratorProperties>
+                              <generatedParameters>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="Name" title="Name"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="StageName" title="StageName"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="CloseDate" title="CloseDate"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=RecordTypeId" name="RecordTypeId" title="RecordTypeId"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=AccountId" name="AccountId" title="AccountId"/>
+                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=LeadSource" name="LeadSource" title="LeadSource"/>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="900" title="AddQuote">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">AddQuote</value>
+                        </argument>
+                      </arguments>
+                      <parameterValueSources/>
+                      <clauses>
+                        <clause name="hidden" testItemId="901">
+                          <steps>
+                            <caseCall testCaseId="75c48f19-b9af-4e36-8fe9-5040496d0775" testItemId="902">
+                              <arguments>
+                                <argument id="reuseConnectionName">
+                                  <value class="value" valueClass="string">JobScience</value>
+                                </argument>
+                                <argument id="list">
+                                  <value class="value" valueClass="string">List</value>
+                                </argument>
+                                <argument id="sfUiTargetObjectId">
+                                  <value class="variable">
+                                    <path element="OpportunityId"/>
+                                  </value>
+                                </argument>
+                              </arguments>
+                            </caseCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="747" title="Add Subscription">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">Add Subscription</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="748">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="749" title="On Quote page">
+                              <tags>
+                                <string>disabled</string>
+                              </tags>
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">JobScience</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.Quote"/>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Dont</value>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On Quote page</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow"/>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="string">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="string">false</value>
+                                </argument>
+                                <argument id="uiTargetUrl"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="692">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="693" title="Click the Add Subscription">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:pageobject:field?field=AddSubscription&amp;pageId=pageobjects.Quote"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="hover">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="captureBefore">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="captureAfter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Add Subscription</value>
+                                        </argument>
+                                        <argument id="afterWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="beforeWait">
+                                          <value class="uiWait" uri="ui:wait:timed?seconds=20"/>
+                                        </argument>
+                                        <argument id="autoRetry"/>
+                                        <argument id="ieClickMethod">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                                          <summary>How the click should be executed for Internet Explorer.</summary>
+                                          <type>
+                                            <choiceType>
+                                              <constraints>
+                                                <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                                <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                              </constraints>
+                                            </choiceType>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="target" name="uiTargetUrl" title="Web Page">
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1087" title="On SF SBQQ__sb page with pageobject Sbqq__sb">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">JobScience</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="sf:ui:target?page=SBQQ__sb&amp;pageObject=pageobjects.sbqq__sb"/>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Always</value>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On SF SBQQ__sb page with pageobject Sbqq__sb</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow"/>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="string">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="string">false</value>
+                                </argument>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="1085">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1086" title="Click the Add Products field">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=addProducts"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="hover">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="captureBefore">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="captureAfter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="beforeWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="afterWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Add Products field</value>
+                                        </argument>
+                                        <argument id="autoRetry"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="917" title="ReadExcelSubscription">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">ReadExcelSubscription</value>
+                        </argument>
+                      </arguments>
+                      <parameterValueSources>
+                        <parameterValueSource variableName="ExcelDataSubscription" variableScope="Test">
+                          <cacheToken>C:/Users/preet/Downloads/CPQ_productTemplate_v2 (1).xlsx;1496295393116</cacheToken>
+                          <cachedParameters>
+                            <apiParam name="RowNumber"/>
+                            <apiParam name="ID_MainSheet"/>
+                            <apiParam name="Name"/>
+                          </cachedParameters>
+                          <sourceValue class="excelTarget" debug="true" namesLocation="FirstRowOfRange" whereComparison="EqualTo" whereName="ID_MainSheet" whereValue="{var.ID_Account}">
+                            <workbookPath class="value" valueClass="string">templates/CPQ_productTemplate_v2.xlsx</workbookPath>
+                            <worksheetName class="value" valueClass="string">STATE</worksheetName>
+                            <valuesRange class="value" valueClass="string">D1:E915</valuesRange>
+                          </sourceValue>
+                        </parameterValueSource>
+                      </parameterValueSources>
+                      <clauses>
+                        <clause name="hidden" testItemId="143"/>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="1021" title="Set Values: ListCount">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">ListCount</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="funcCall" id="Count">
+                                  <argument id="value">
+                                    <value class="variable">
+                                      <path element="ExcelDataSubscription"/>
+                                    </value>
+                                  </argument>
+                                </value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Test</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="1038" title="VerifyProductConfig">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">VerifyProductConfig</value>
+                        </argument>
+                      </arguments>
+                      <parameterValueSources/>
+                      <clauses>
+                        <clause name="hidden" testItemId="1039">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1090" title="On SF SBQQ__sb page with pageobject Sbqq__sb">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">JobScience</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="sf:ui:target?page=SBQQ__sb&amp;pageObject=pageobjects.sbqq__sb"/>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Always</value>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On SF SBQQ__sb page with pageobject Sbqq__sb</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow"/>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="string">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="string">false</value>
+                                </argument>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="1091">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="1103" title="Set Values: ActualList">
+                                      <arguments>
+                                        <argument id="values">
+                                          <value class="valueList" mutable="Mutable">
+                                            <namedValues mutable="Mutable">
+                                              <namedValue name="valuePath">
+                                                <value class="value" valueClass="string">ActualList</value>
+                                              </namedValue>
+                                              <namedValue name="value">
+                                                <value class="variable">
+                                                  <path element="ActualSubscriptionList"/>
+                                                  <path element="columns"/>
+                                                  <path element="productName"/>
+                                                  <path element="columnValues"/>
+                                                </value>
+                                              </namedValue>
+                                              <namedValue name="valueScope">
+                                                <value class="value" valueClass="string">Test</value>
+                                              </namedValue>
+                                            </namedValues>
+                                          </value>
+                                        </argument>
+                                      </arguments>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="1118" title="Set Values: ListCountActual">
+                                      <arguments>
+                                        <argument id="values">
+                                          <value class="valueList" mutable="Mutable">
+                                            <namedValues mutable="Mutable">
+                                              <namedValue name="valuePath">
+                                                <value class="value" valueClass="string">ListCountActual</value>
+                                              </namedValue>
+                                              <namedValue name="value">
+                                                <value class="funcCall" id="Count">
+                                                  <argument id="value">
+                                                    <value class="variable">
+                                                      <path element="ActualList"/>
+                                                    </value>
+                                                  </argument>
+                                                </value>
+                                              </namedValue>
+                                              <namedValue name="valueScope">
+                                                <value class="value" valueClass="string">Test</value>
+                                              </namedValue>
+                                            </namedValues>
+                                          </value>
+                                        </argument>
+                                      </arguments>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="1119" title="With Product Selection Lines rows 1">
+                                      <arguments>
+                                        <argument id="uiConnectionName">
+                                          <value class="value" valueClass="string">JobScience</value>
+                                        </argument>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="sf:ui:locator:row?table=productSelectionLines"/>
+                                        </argument>
+                                        <argument id="uiRowLocator">
+                                          <value class="value" valueClass="string">1</value>
+                                        </argument>
+                                        <argument id="locatorDescription">
+                                          <value class="value" valueClass="string">With Product Selection Lines rows 1</value>
+                                        </argument>
+                                        <argument id="failIfNotFound">
+                                          <value class="value" valueClass="boolean">true</value>
+                                        </argument>
+                                        <argument id="debugRowLocator"/>
+                                        <argument id="resultName">
+                                          <value class="value" valueClass="string">Row</value>
+                                        </argument>
+                                        <argument id="resultScope">
+                                          <value class="value" valueClass="string">Local</value>
+                                        </argument>
+                                        <argument id="autoRetry"/>
+                                      </arguments>
+                                      <clauses>
+                                        <clause name="substeps" testItemId="1120">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" name="UiAssert" testItemId="1121" title="UI Assert">
+                                              <arguments>
+                                                <argument id="resultName">
+                                                  <value class="value" valueClass="string">Values</value>
+                                                </argument>
+                                                <argument id="resultScope">
+                                                  <value class="value" valueClass="string">Test</value>
+                                                </argument>
+                                                <argument id="fieldAssertions">
+                                                  <value class="valueList" mutable="Mutable">
+                                                    <uiFieldAssertion resultName="productName">
+                                                      <fieldLocator uri="ui:locator?name=productName"/>
+                                                      <attributeAssertions>
+                                                        <uiAttributeAssertion attributeName="value" comparisonType="None"/>
+                                                      </attributeAssertions>
+                                                    </uiFieldAssertion>
+                                                  </value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="columnAssertions">
+                                                  <value class="valueList" mutable="Mutable"/>
+                                                </argument>
+                                                <argument id="pageAssertions">
+                                                  <value class="valueList" mutable="Mutable"/>
+                                                </argument>
+                                                <argument id="beforeWait"/>
+                                                <argument id="autoRetry"/>
+                                              </arguments>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                      </clauses>
+                                      <generatedParameters>
+                                        <apiParam group="options" name="autoRetry" title="Auto Retry">
+                                          <summary>Whether to wait for the rows to be visible.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" name="UiAssert" testItemId="1122" title="UI Assert">
+                                      <arguments>
+                                        <argument id="resultName">
+                                          <value class="value" valueClass="string">ActualSubscriptionList</value>
+                                        </argument>
+                                        <argument id="resultScope">
+                                          <value class="value" valueClass="string">Test</value>
+                                        </argument>
+                                        <argument id="columnAssertions">
+                                          <value class="valueList" mutable="Mutable">
+                                            <uiColumnAssertion resultName="productName">
+                                              <fieldLocator uri="ui:locator?name=productName&amp;path=productSelectionLines"/>
+                                              <attributeAssertions>
+                                                <uiAttributeAssertion attributeName="columnValues" comparisonType="None"/>
+                                              </attributeAssertions>
+                                            </uiColumnAssertion>
+                                          </value>
+                                        </argument>
+                                        <argument id="captureAfter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="fieldAssertions">
+                                          <value class="valueList" mutable="Mutable"/>
+                                        </argument>
+                                        <argument id="pageAssertions">
+                                          <value class="valueList" mutable="Mutable"/>
+                                        </argument>
+                                        <argument id="beforeWait"/>
+                                        <argument id="autoRetry"/>
+                                      </arguments>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.bundled.apis.If" name="If" testItemId="1123" title="If: {ListCountActual = 19}">
+                                      <arguments>
+                                        <argument id="condition">
+                                          <value class="eq">
+                                            <lhs class="variable">
+                                              <path element="ListCountActual"/>
+                                            </lhs>
+                                            <rhs class="value" valueClass="decimal">19</rhs>
+                                          </value>
+                                        </argument>
+                                      </arguments>
+                                      <clauses>
+                                        <clause name="then" testItemId="1124">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="1125" title="For Each: {ExcelDataSubscription}=&gt;ExpectedSubscriptionList">
+                                              <tags/>
+                                              <arguments>
+                                                <argument id="list">
+                                                  <value class="variable">
+                                                    <path element="ExcelDataSubscription"/>
+                                                  </value>
+                                                </argument>
+                                                <argument id="fromItem">
+                                                  <value class="value" valueClass="decimal">1</value>
+                                                </argument>
+                                                <argument id="valueName">
+                                                  <value class="value" valueClass="string">ExpectedSubscriptionList</value>
+                                                </argument>
+                                                <argument id="continueOnFailure">
+                                                  <value class="value" valueClass="boolean">true</value>
+                                                </argument>
+                                              </arguments>
+                                              <parameterValueSources/>
+                                              <clauses>
+                                                <clause name="substeps" testItemId="1126">
+                                                  <steps>
+                                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1127" title="On Opp_ Prod page">
+                                                      <arguments>
+                                                        <argument id="uiConnectionName">
+                                                          <value class="value" valueClass="string">JobScience</value>
+                                                        </argument>
+                                                        <argument id="target">
+                                                          <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.Opp_Prod"/>
+                                                        </argument>
+                                                        <argument id="targetDescription">
+                                                          <value class="value" valueClass="string">On Opp_ Prod page</value>
+                                                        </argument>
+                                                        <argument id="navigate">
+                                                          <value class="value" valueClass="string">Always</value>
+                                                        </argument>
+                                                        <argument id="windowSelection">
+                                                          <value class="value" valueClass="string">Default</value>
+                                                        </argument>
+                                                        <argument id="windowSize">
+                                                          <value class="value" valueClass="string">Default</value>
+                                                        </argument>
+                                                        <argument id="closeWindow"/>
+                                                        <argument id="captureBefore">
+                                                          <value class="value" valueClass="string">false</value>
+                                                        </argument>
+                                                        <argument id="captureAfter">
+                                                          <value class="value" valueClass="string">false</value>
+                                                        </argument>
+                                                        <argument id="uiTargetUrl"/>
+                                                      </arguments>
+                                                      <clauses>
+                                                        <clause name="substeps" testItemId="1128">
+                                                          <steps>
+                                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1129" title="Call the verifyText method">
+                                                              <tags/>
+                                                              <arguments>
+                                                                <argument id="locator">
+                                                                  <value class="uiLocator" uri="ui:pageobject:method?operation=verifyText&amp;pageId=pageobjects.Opp_Prod"/>
+                                                                </argument>
+                                                                <argument id="interaction">
+                                                                  <value class="uiInteraction" uri="ui:interaction?name=invoke"/>
+                                                                </argument>
+                                                                <argument id="interactionDescription">
+                                                                  <value class="value" valueClass="string">Call the verifyText method</value>
+                                                                </argument>
+                                                                <argument id="beforeWait"/>
+                                                                <argument id="afterWait"/>
+                                                                <argument id="autoRetry"/>
+                                                                <argument id="captureBefore">
+                                                                  <value class="value" valueClass="string">false</value>
+                                                                </argument>
+                                                                <argument id="captureAfter">
+                                                                  <value class="value" valueClass="string">false</value>
+                                                                </argument>
+                                                                <argument id="param_arg0">
+                                                                  <value class="variable">
+                                                                    <path element="ExpectedSubscriptionList"/>
+                                                                    <path element="Name"/>
+                                                                  </value>
+                                                                </argument>
+                                                                <argument id="param_resultName">
+                                                                  <value class="value" valueClass="string">ReturnValue</value>
+                                                                </argument>
+                                                                <argument id="param_resultScope">
+                                                                  <value class="value" valueClass="string">Test</value>
+                                                                </argument>
+                                                              </arguments>
+                                                              <generatedParameters>
+                                                                <apiParam group="value" name="param_arg0" title="input">
+                                                                  <type>
+                                                                    <textType/>
+                                                                  </type>
+                                                                </apiParam>
+                                                                <apiParam group="value" name="param_resultName" seq="1001" title="Result Name">
+                                                                  <type>
+                                                                    <booleanType nullable="false"/>
+                                                                  </type>
+                                                                </apiParam>
+                                                                <apiParam group="value" name="param_resultScope" seq="1002" title="Result Scope">
+                                                                  <defaultValue>Test</defaultValue>
+                                                                  <type>
+                                                                    <choiceType>
+                                                                      <constraints>
+                                                                        <valueConstraint name="boundedValues">Global:Test Run|Folder:Test Folder|Test:Test Case|GroupStep:Group Step|Local:Test Step</valueConstraint>
+                                                                      </constraints>
+                                                                    </choiceType>
+                                                                  </type>
+                                                                </apiParam>
+                                                              </generatedParameters>
+                                                            </apiCall>
+                                                            <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="1130" title="Assert: true EqualTo {ReturnValue}">
+                                                              <arguments>
+                                                                <argument id="expectedValue">
+                                                                  <value class="value" valueClass="string">true</value>
+                                                                </argument>
+                                                                <argument id="actualValue">
+                                                                  <value class="variable">
+                                                                    <path element="ReturnValue"/>
+                                                                  </value>
+                                                                </argument>
+                                                                <argument id="comparisonType">
+                                                                  <value class="value" valueClass="string">EqualTo</value>
+                                                                </argument>
+                                                                <argument id="caseSensitive">
+                                                                  <value class="value" valueClass="boolean">true</value>
+                                                                </argument>
+                                                                <argument id="numeric">
+                                                                  <value class="value" valueClass="boolean">false</value>
+                                                                </argument>
+                                                                <argument id="retainDecimals">
+                                                                  <value class="value" valueClass="boolean">false</value>
+                                                                </argument>
+                                                                <argument id="nullGreater">
+                                                                  <value class="value" valueClass="boolean">false</value>
+                                                                </argument>
+                                                                <argument id="matchMultiLine">
+                                                                  <value class="value" valueClass="boolean">false</value>
+                                                                </argument>
+                                                                <argument id="matchDotAll">
+                                                                  <value class="value" valueClass="boolean">false</value>
+                                                                </argument>
+                                                                <argument id="failureMessage"/>
+                                                              </arguments>
+                                                            </apiCall>
+                                                          </steps>
+                                                        </clause>
+                                                      </clauses>
+                                                      <generatedParameters>
+                                                        <apiParam group="target" name="uiTargetUrl" title="Web Page">
+                                                          <type>
+                                                            <textType/>
+                                                          </type>
+                                                        </apiParam>
+                                                      </generatedParameters>
+                                                    </apiCall>
+                                                  </steps>
+                                                </clause>
+                                              </clauses>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                        <clause name="else" testItemId="1131">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.bundled.apis.control.Fail" name="Fail" testItemId="1132" title="Fail Test: Count mismatch">
+                                              <arguments>
+                                                <argument id="message">
+                                                  <value class="value" valueClass="string">Count mismatch</value>
+                                                </argument>
+                                              </arguments>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                      </clauses>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.bdd.When" name="When" testItemId="807" title="When: I add the Quote &amp; Subsciption">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">I add the Quote &amp; Subsciption</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="808">
+          <steps/>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.bdd.Then" name="Then" testItemId="809" title="Then: I should be able see the corresponding bundles">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">I should be able see the corresponding bundles</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="60">
+          <steps/>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="1">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: JobScience (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Sales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="vfDebug"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.bdd.Given" name="Given" testItemId="69" title="Given: That there are multiple Events* logged against an Opportunity">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">That there are multiple Events* logged against an Opportunity</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="70">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="204" title="Set Values: Event3">
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">Event1</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="value" valueClass="string">Recruitment Subs RD Visit</value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">Event2</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="value" valueClass="string">Recruitment Subs Scheduled Call</value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">Event3</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="value" valueClass="string">Subs 6 Month Renewal Visit</value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="206" title="CreateOpportunity">
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">CreateOpportunity</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="207">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="199" title="CreateOpportunity">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">CreateOpportunity</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="200">
+                          <steps>
+                            <caseCall testCaseId="7a9cdb31-c852-4464-a1f6-ab34d08fa7e4" testItemId="201">
+                              <arguments>
+                                <argument id="reuseConnectionName">
+                                  <value class="value" valueClass="string">JobScience</value>
+                                </argument>
+                                <argument id="StageName">
+                                  <value class="value" valueClass="string">New</value>
+                                </argument>
+                                <argument id="GT">
+                                  <value class="value" valueClass="string">Multi-Academy Trust</value>
+                                </argument>
+                              </arguments>
+                              <outputArguments>
+                                <outputArgument id="opportunityId">
+                                  <name class="value" valueClass="string">opportunityId</name>
+                                </outputArgument>
+                                <outputArgument id="OpportunityId">
+                                  <name class="value" valueClass="string">OpportunityId</name>
+                                </outputArgument>
+                              </outputArguments>
+                            </caseCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="182" title="CreateEvents">
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">CreateEvents</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="183">
+                  <steps>
+                    <caseCall testCaseId="dde2110c-6c24-43be-bf2c-bee60515a725" testItemId="176">
+                      <tags/>
+                      <arguments>
+                        <argument id="EventName">
+                          <value class="value" valueClass="string">Recruitment Subs RD Visit</value>
+                        </argument>
+                        <argument id="reuseConnectionName">
+                          <value class="value" valueClass="string">JobScience</value>
+                        </argument>
+                        <argument id="sfUiTargetObjectId">
+                          <value class="variable">
+                            <path element="OpportunityId"/>
+                          </value>
+                        </argument>
+                        <argument id="Event">
+                          <value class="variable">
+                            <path element="Event1"/>
+                          </value>
+                        </argument>
+                        <argument id="NOC">
+                          <value class="value" valueClass="string">0</value>
+                        </argument>
+                        <argument id="NOE">
+                          <value class="value" valueClass="string">1</value>
+                        </argument>
+                      </arguments>
+                      <outputArguments>
+                        <outputArgument id="eventId">
+                          <name class="value" valueClass="string">eventId</name>
+                        </outputArgument>
+                        <outputArgument id="NameeventId">
+                          <name class="value" valueClass="string">NameeventId</name>
+                        </outputArgument>
+                      </outputArguments>
+                    </caseCall>
+                    <caseCall testCaseId="dde2110c-6c24-43be-bf2c-bee60515a725" testItemId="178">
+                      <tags/>
+                      <arguments>
+                        <argument id="EventName">
+                          <value class="value" valueClass="string">Recruitment Subs Scheduled Call</value>
+                        </argument>
+                        <argument id="reuseConnectionName">
+                          <value class="value" valueClass="string">JobScience</value>
+                        </argument>
+                        <argument id="sfUiTargetObjectId">
+                          <value class="variable">
+                            <path element="OpportunityId"/>
+                          </value>
+                        </argument>
+                        <argument id="Event">
+                          <value class="variable">
+                            <path element="Event2"/>
+                          </value>
+                        </argument>
+                        <argument id="NOC">
+                          <value class="value" valueClass="string">0</value>
+                        </argument>
+                        <argument id="NOE">
+                          <value class="value" valueClass="string">2</value>
+                        </argument>
+                      </arguments>
+                      <outputArguments>
+                        <outputArgument id="eventId">
+                          <name class="value" valueClass="string">eventId</name>
+                        </outputArgument>
+                        <outputArgument id="NameeventId">
+                          <name class="value" valueClass="string">NameeventId</name>
+                        </outputArgument>
+                      </outputArguments>
+                    </caseCall>
+                    <caseCall testCaseId="dde2110c-6c24-43be-bf2c-bee60515a725" testItemId="180">
+                      <tags/>
+                      <arguments>
+                        <argument id="EventName">
+                          <value class="value" valueClass="string">Recruitment Subs Scheduled Call</value>
+                        </argument>
+                        <argument id="reuseConnectionName">
+                          <value class="value" valueClass="string">JobScience</value>
+                        </argument>
+                        <argument id="sfUiTargetObjectId">
+                          <value class="variable">
+                            <path element="OpportunityId"/>
+                          </value>
+                        </argument>
+                        <argument id="Event">
+                          <value class="variable">
+                            <path element="Event3"/>
+                          </value>
+                        </argument>
+                        <argument id="NOC">
+                          <value class="value" valueClass="string">0</value>
+                        </argument>
+                        <argument id="NOE">
+                          <value class="value" valueClass="string">3</value>
+                        </argument>
+                      </arguments>
+                      <outputArguments>
+                        <outputArgument id="eventId">
+                          <name class="value" valueClass="string">eventId</name>
+                        </outputArgument>
+                        <outputArgument id="NameeventId">
+                          <name class="value" valueClass="string">NameeventId</name>
+                        </outputArgument>
+                      </outputArguments>
+                    </caseCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.bdd.Given" name="Given" testItemId="157" title="Given: And the Date of First Meeting field contains the date of the earliest Event">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">And the Date of First Meeting field contains the date of the earliest Event</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="89">
+          <steps>
+            <caseCall testCaseId="3f83b3cf-7f4e-46ea-a1b4-47c3dbfc1f6b" testItemId="148">
+              <arguments>
+                <argument id="reuseConnectionName">
+                  <value class="value" valueClass="string">JobScience</value>
+                </argument>
+                <argument id="sfUiTargetObjectId">
+                  <value class="variable">
+                    <path element="OpportunityId"/>
+                  </value>
+                </argument>
+                <argument id="EN">
+                  <value class="variable">
+                    <path element="Event1"/>
+                  </value>
+                </argument>
+              </arguments>
+            </caseCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.bdd.When" name="When" testItemId="103" title="When: I delete that event[Recruitment Subs Scheduled Call] from the Opp">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">I delete that event[Recruitment Subs Scheduled Call] from the Opp</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="104">
+          <steps>
+            <caseCall testCaseId="7b09b468-50b9-48f0-ba1b-8ed21a2e5d82" testItemId="205">
+              <arguments>
+                <argument id="reuseConnectionName">
+                  <value class="value" valueClass="string">JobScience</value>
+                </argument>
+                <argument id="DeletedEvent">
+                  <value class="variable">
+                    <path element="Event2"/>
+                  </value>
+                </argument>
+                <argument id="sfUiTargetObjectId">
+                  <value class="variable">
+                    <path element="OpportunityId"/>
+                  </value>
+                </argument>
+              </arguments>
+            </caseCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.bdd.Then" name="Then" testItemId="110" title="Then: The Date of First Meeting field should be updated to reflect the new earliest event date">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">The Date of First Meeting field should be updated to reflect the new earliest event date</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="111">
+          <steps>
+            <caseCall testCaseId="3f83b3cf-7f4e-46ea-a1b4-47c3dbfc1f6b" testItemId="156">
+              <arguments>
+                <argument id="reuseConnectionName">
+                  <value class="value" valueClass="string">JobScience</value>
+                </argument>
+                <argument id="sfUiTargetObjectId">
+                  <value class="variable">
+                    <path element="OpportunityId"/>
+                  </value>
+                </argument>
+                <argument id="EN">
+                  <value class="variable">
+                    <path element="Event1"/>
+                  </value>
+                </argument>
+              </arguments>
+            </caseCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+</testCase>

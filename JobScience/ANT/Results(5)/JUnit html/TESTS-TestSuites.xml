@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite failures="0" hostname="DT2659" id="0" name="JobScience/tests" package="" skipped="0" tests="11" time="588.981" timestamp="Wed Apr 05 09:20:09 BST 2017">
+	    <properties>
+		      <property name="excludeCallableTestCases" value="true" />
+
+		      <property name="testEnvironment" value="TestEnv" />
+
+		      <property name="pluginOutputLevel" value="WARNING" />
+
+		      <property name="projectPath" value=".." />
+
+		      <property name="salesforceMetadataCache" value="Reuse" />
+
+		      <property name="resultsPathDisposition" value="Increment" />
+
+		      <property name="testOutputLevel" value="WARNING" />
+
+		      <property name="webBrowserType" value="Google Chrome" />
+
+		      <property name="resultsPath" value="../ANT/Results" />
+
+		      <property name="webBrowserConfiguration" value="Full Screen" />
+
+		      <property name="projectCachePath" value="../../.provarCaches" />
+
+	    </properties>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contacts\367a-MAUpdateStandaradEmailonupdatePersonalEmail.testcase" name="367a-MAUpdateStandaradEmailonupdatePersonalEmail.testcase" time="83.07">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contacts\367a-UpdateStandaradEmail.testcase" name="367a-UpdateStandaradEmail.testcase" time="65.069">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contacts\367b-MAUpdateStandaradEmailonupdateWorkEmail.testcase" name="367b-MAUpdateStandaradEmailonupdateWorkEmail.testcase" time="58.5">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contacts\367c-MAUpdateStandaradEmailondeleteWorkEmail.testcase" name="367c-MAUpdateStandaradEmailondeleteWorkEmail.testcase" time="42.104">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contacts\367d-MAUpdateStandaradEmailondeleteAllEmail.testcase" name="367d-MAUpdateStandaradEmailondeleteAllEmail.testcase" time="44.538">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contacts\367e-PAUpdateStandaradEmailonupdateWorkEmail.testcase" name="367e-PAUpdateStandaradEmailonupdateWorkEmail.testcase" time="61.026">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contacts\367f-PAUpdateStandaradEmailonupdatePersonalEmail.testcase" name="367f-PAUpdateStandaradEmailonupdatePersonalEmail.testcase" time="58.559">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contacts\367g-PAUpdateStandaradEmailondeletePersonalEmail.testcase" name="367g-PAUpdateStandaradEmailondeletePersonalEmail.testcase" time="41.276">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contacts\367h-PAUpdateStandaradEmailondeleteAllEmail.testcase" name="367h-PAUpdateStandaradEmailondeleteAllEmail.testcase" time="59.107">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contacts\663a-CCUpdateStandaradEmail.testcase" name="663a-CCUpdateStandaradEmail.testcase" time="28.619">
+	</testcase>
+
+	    <testcase classname="tests/TestSuite\Sales-General\Contacts\663c-CCUpdateStandaradEmail.testcase" name="663c-CCUpdateStandaradEmail.testcase" time="23.389">
+	</testcase>
+
+  </testsuite>
+</testsuites>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="16" registryId="dcf79e91-97ae-4995-9b4f-9cf551871e2e" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: JobScience (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName"/>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument argId="3fde070b-1709-4e1d-ac16-bfebde8560a2" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="vfDebug"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="3" title="Set Values: LastName">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">LastName</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="funcCall" id="UniqueId">
+                  <argument id="length">
+                    <value class="value" valueClass="decimal">4</value>
+                  </argument>
+                  <argument id="format">
+                    <value class="value" valueClass="string">ALPHANUMERIC</value>
+                  </argument>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="8" title="Create Object: Contact=&gt;ContactId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Contact</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">ContactId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument argId="d4121e27-24f1-4e82-809a-981610054d6a" id="AccountId">
+          <value class="variable">
+            <path element="AccountId"/>
+          </value>
+        </argument>
+        <argument id="LastName">
+          <value class="variable">
+            <path element="LastName"/>
+          </value>
+        </argument>
+        <argument id="FirstName">
+          <value class="value" valueClass="string">ProvarTest</value>
+        </argument>
+        <argument id="Salutation">
+          <value class="value" valueClass="string">Mr.</value>
+        </argument>
+        <argument argId="530ae009-f96c-4f0a-bdbf-1a9f6a1284cb" id="RecordTypeId">
+          <value class="variable">
+            <path element="RecordTypeId"/>
+          </value>
+        </argument>
+        <argument id="Title__c">
+          <value class="value" valueClass="string">Account/Agency/Advertising</value>
+        </argument>
+        <argument id="LeadSource">
+          <value class="value" valueClass="string">Call</value>
+        </argument>
+        <argument id="Personal_Email__c">
+          <value class="value" valueClass="string">provarpersonal@gmail.com</value>
+        </argument>
+        <argument id="Work_Email__c">
+          <value class="value" valueClass="string">provarwork@gmail.com</value>
+        </argument>
+        <argument id="Department_Email__c">
+          <value class="value" valueClass="string">provardepartment@gmail.com</value>
+        </argument>
+        <argument id="MobilePhone">
+          <value class="value" valueClass="string">07845789658</value>
+        </argument>
+        <argument id="Recruited_Office__c">
+          <value class="value" valueClass="string">London - B Frost</value>
+        </argument>
+      </arguments>
+      <resultAssertions/>
+      <parameterValueSources/>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">JobScience</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Contact</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Contact&amp;field=AccountId" name="AccountId" title="AccountId"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Contact&amp;field=LastName" name="LastName" title="LastName"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Contact&amp;field=FirstName" name="FirstName" title="FirstName"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Contact&amp;field=Salutation" name="Salutation" title="Salutation"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Contact&amp;field=RecordTypeId" name="RecordTypeId" title="RecordTypeId"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Contact&amp;field=Title__c" name="Title__c" title="Title__c">
+          <summary>If 'Other' is selected please complete the 'Job Title field</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Contact&amp;field=LeadSource" name="LeadSource" title="LeadSource"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Contact&amp;field=Personal_Email__c" name="Personal_Email__c" title="Personal_Email__c">
+          <summary>Non work email e.g. joe.bloggs@gmail.com. Unique to that contact</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Contact&amp;field=Work_Email__c" name="Work_Email__c" title="Work_Email__c">
+          <summary>Direct work email e.g. joe.bloggs@tes.co.uk. \nUnique to that contact</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Contact&amp;field=Department_Email__c" name="Department_Email__c" title="Department_Email__c">
+          <summary>Central work mailbox. Multiple people can access email within a team or department e.g. hr@tes.co.uk or primarydept@tes.co.uk</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Contact&amp;field=MobilePhone" name="MobilePhone" title="MobilePhone"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Contact&amp;field=Recruited_Office__c" name="Recruited_Office__c" title="Recruited_Office__c"/>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" name="ApexSoqlQuery" testItemId="9" title="SOQL Query: select Contact_Id__c,Name from Contact where Id='{ContactId}'=&gt;ContactRowsID">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="compound">
+            <parts>
+              <value valueClass="string">select Contact_Id__c,Name from Contact where Id='</value>
+              <variable>
+                <path element="ContactId"/>
+              </variable>
+              <value valueClass="string">'</value>
+            </parts>
+          </value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">ContactRowsID</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:3fde070b-1709-4e1d-ac16-bfebde8560a2" name="reuseConnectionName" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:530ae009-f96c-4f0a-bdbf-1a9f6a1284cb" modelBinding="sf:ui:binding:object?object=Contact&amp;field=RecordTypeId" name="RecordTypeId" title="RecordTypeId">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:d4121e27-24f1-4e82-809a-981610054d6a" modelBinding="sf:ui:binding:object?object=Contact&amp;field=AccountId" name="AccountId" title="AccountId">
+      <summary/>
+    </param>
+  </params>
+  <outputParams>
+    <param name="ContactRowsID" title="ContactRowsID">
+      <summary>The name under which the returned rows will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+            <valueConstraint name="regex"/>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="ContactRowsID"/>
+      </sourceValue>
+    </param>
+    <param name="ContactId" title="ContactId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+            <valueConstraint name="regex"/>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="ContactId"/>
+      </sourceValue>
+    </param>
+  </outputParams>
+  <args>
+    <argument id="reuseConnectionName"/>
+    <argument id="RecordTypeId">
+      <value class="value" valueClass="string">Master Contact</value>
+    </argument>
+    <argument id="AccountId">
+      <value class="value" valueClass="string">acd</value>
+    </argument>
+  </args>
+  <outputArgs>
+    <outputArgument id="ContactId">
+      <name class="value" valueClass="string">ContactId</name>
+    </outputArgument>
+    <outputArgument id="ContactRowsID">
+      <name class="value" valueClass="string">ContactRowsID</name>
+    </outputArgument>
+  </outputArgs>
+</testCase>

@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="19" registryId="fa89e28a-ca8d-49c2-ae05-8ce9049f6013" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: JobScience (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument argId="6d1d1dec-8343-4ed1-8b71-0b24f90cda6f" id="uiApplicationName">
+          <value class="value" valueClass="string">Sales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument argId="d5f3c021-a071-4c5e-b2cc-9f8dfb193de0" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Reuse</value>
+        </argument>
+        <argument id="vfDebug"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="3" title="Set Values: AccountName">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">AccountName</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="compound">
+                  <parts>
+                    <value valueClass="string">ProvarTest </value>
+                    <funcCall id="UniqueId">
+                      <argument id="length">
+                        <value class="value" valueClass="decimal">4</value>
+                      </argument>
+                      <argument id="format">
+                        <value class="value" valueClass="string">ALPHANUMERIC</value>
+                      </argument>
+                    </funcCall>
+                  </parts>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="2" title="Create Object: Account=&gt;AccountId">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Account</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">AccountId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="Name">
+          <value class="variable">
+            <path element="AccountName"/>
+          </value>
+        </argument>
+        <argument argId="0e088c58-444d-491b-b531-877d2fe57002" id="RecordTypeId">
+          <value class="variable">
+            <path element="RecordTypeId"/>
+          </value>
+        </argument>
+        <argument id="CurrencyIsoCode">
+          <value class="value" valueClass="string">GBP</value>
+        </argument>
+        <argument id="CleanStatus">
+          <value class="value" valueClass="string">Pending</value>
+        </argument>
+        <argument id="Client_Type__c">
+          <value class="value" valueClass="string">To Be Analysed</value>
+        </argument>
+        <argument id="Customer_Group__c">
+          <value class="value" valueClass="string">Academy</value>
+        </argument>
+        <argument id="Address_Country_v2__c">
+          <value class="value" valueClass="string">South Sudan</value>
+        </argument>
+        <argument id="Region_1__c">
+          <value class="value" valueClass="string">Classified</value>
+        </argument>
+        <argument id="Region__c">
+          <value class="value" valueClass="string">Classified</value>
+        </argument>
+        <argument id="Lat_Long__Latitude__s">
+          <value class="value" valueClass="decimal">90.0</value>
+        </argument>
+        <argument id="Lat_Long__Longitude__s">
+          <value class="value" valueClass="string">137.20379680000000</value>
+        </argument>
+        <argument id="Invoice_Name__c">
+          <value class="value" valueClass="string">ASD TEST 123</value>
+        </argument>
+        <argument id="Address_Address_1__c">
+          <value class="value" valueClass="string">123</value>
+        </argument>
+        <argument id="LastUpdateToAWS__c">
+          <value class="value" valueClass="date">1470999609000</value>
+        </argument>
+        <argument id="Status__c">
+          <value class="value" valueClass="string">Open</value>
+        </argument>
+        <argument id="Account_Use_Type__c">
+          <value class="value" valueClass="string">Bill To Only</value>
+        </argument>
+        <argument id="Organisation_Group__c">
+          <value class="value" valueClass="string">Charity</value>
+        </argument>
+        <argument id="SuccessStatusOfLastAWSUpdate__c">
+          <value class="value" valueClass="string">Success</value>
+        </argument>
+        <argument id="Purchased_Recruitment_Sub__c">
+          <value class="value" valueClass="string">TES Build Subscription</value>
+        </argument>
+        <argument id="Calculated_Team_Allocation__c">
+          <value class="value" valueClass="string">TES Scotland</value>
+        </argument>
+        <argument id="Conversion_Record_Type__c">
+          <value class="value" valueClass="string">Tes Institute B2B</value>
+        </argument>
+        <argument id="Verified__c">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">JobScience</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Account</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Name" name="Name" title="Name"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=RecordTypeId" name="RecordTypeId" title="RecordTypeId"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=CurrencyIsoCode" name="CurrencyIsoCode" title="CurrencyIsoCode"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=CleanStatus" name="CleanStatus" title="CleanStatus"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Client_Type__c" name="Client_Type__c" title="Client_Type__c">
+          <summary>MSL Data field</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Customer_Group__c" name="Customer_Group__c" title="Customer_Group__c">
+          <summary>MSL Data field</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Address_Country_v2__c" name="Address_Country_v2__c" title="Address_Country_v2__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Region_1__c" name="Region_1__c" title="Region_1__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Region__c" name="Region__c" title="Region__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Lat_Long__Latitude__s" name="Lat_Long__Latitude__s" title="Lat_Long__Latitude__s"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Lat_Long__Longitude__s" name="Lat_Long__Longitude__s" title="Lat_Long__Longitude__s"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Invoice_Name__c" name="Invoice_Name__c" title="Invoice_Name__c">
+          <summary>Limited to 60 characters. CAPITAL LETTERS ONLY</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Address_Address_1__c" name="Address_Address_1__c" title="Address_Address_1__c">
+          <summary>Limited to 30 characters</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=LastUpdateToAWS__c" name="LastUpdateToAWS__c" title="LastUpdateToAWS__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Status__c" name="Status__c" title="Status__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Account_Use_Type__c" name="Account_Use_Type__c" title="Account_Use_Type__c">
+          <summary>Identifies where account can be used for SOP</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Organisation_Group__c" name="Organisation_Group__c" title="Organisation_Group__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=SuccessStatusOfLastAWSUpdate__c" name="SuccessStatusOfLastAWSUpdate__c" title="SuccessStatusOfLastAWSUpdate__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Purchased_Recruitment_Sub__c" name="Purchased_Recruitment_Sub__c" title="Purchased_Recruitment_Sub__c">
+          <summary>The type of Recruitment Subscription product purchased by this Account.</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Calculated_Team_Allocation__c" name="Calculated_Team_Allocation__c" title="Calculated_Team_Allocation__c">
+          <summary>This value is calculated according to the Account's Location, Organisation Group, Funding Type and Simple Phase.</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Conversion_Record_Type__c" name="Conversion_Record_Type__c" title="Conversion_Record_Type__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Verified__c" name="Verified__c" title="Verified__c"/>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="5" title="Create Object: Account=&gt;AccountId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Account</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">AccountId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument argId="fecc4d91-010c-43b5-a580-e46e78f8af46" id="Location__c">
+          <value class="variable">
+            <path element="Location__c"/>
+          </value>
+        </argument>
+        <argument id="Lat_Long__Latitude__s">
+          <value class="value" valueClass="decimal">1.000</value>
+        </argument>
+        <argument id="Lat_Long__Longitude__s">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="Address_Line_1_Unverified__c">
+          <value class="value" valueClass="string">123</value>
+        </argument>
+        <argument id="Account_Use_Type__c">
+          <value class="value" valueClass="string">Bill To Only</value>
+        </argument>
+        <argument id="Invoice_Name__c">
+          <value class="value" valueClass="string">ASD TEST 123</value>
+        </argument>
+        <argument id="Name">
+          <value class="variable">
+            <path element="AccountName"/>
+          </value>
+        </argument>
+        <argument id="Client_Type__c">
+          <value class="value" valueClass="string">Charity Overseas EU</value>
+        </argument>
+        <argument id="Customer_Group__c">
+          <value class="value" valueClass="string">Further/Higher Ed</value>
+        </argument>
+        <argument id="Organisation_Group__c">
+          <value class="value" valueClass="string">Company (FE)</value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">JobScience</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Account</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Location__c" name="Location__c" title="Location__c">
+          <summary>UK - Select LA  / Australia - Select State / Other - Select Country</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Lat_Long__Latitude__s" name="Lat_Long__Latitude__s" title="Lat_Long__Latitude__s"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Lat_Long__Longitude__s" name="Lat_Long__Longitude__s" title="Lat_Long__Longitude__s"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Address_Line_1_Unverified__c" name="Address_Line_1_Unverified__c" title="Address_Line_1_Unverified__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Account_Use_Type__c" name="Account_Use_Type__c" title="Account_Use_Type__c">
+          <summary>Identifies where account can be used when booking an order. For Tes Institute Pathway Tutor select 'Employer'. For a Learner enrolled on a course select 'Bill to Only'</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Invoice_Name__c" name="Invoice_Name__c" title="Invoice_Name__c">
+          <summary>Limited to 60 characters. CAPITAL LETTERS ONLY</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Name" name="Name" title="Name"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Client_Type__c" name="Client_Type__c" title="Client_Type__c">
+          <summary>MSL Data field</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Customer_Group__c" name="Customer_Group__c" title="Customer_Group__c">
+          <summary>MSL Data field</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Organisation_Group__c" name="Organisation_Group__c" title="Organisation_Group__c"/>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" name="ApexSoqlQuery" testItemId="6" title="SOQL Query: select Account_Id__c,Name from Account where Id='{AccountId}'=&gt;AccountRowsID">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="compound">
+            <parts>
+              <value valueClass="string">select Account_Id__c,Name from Account where Id='</value>
+              <variable>
+                <path element="AccountId"/>
+              </variable>
+              <value valueClass="string">'</value>
+            </parts>
+          </value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">AccountRowsID</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:d5f3c021-a071-4c5e-b2cc-9f8dfb193de0" name="reuseConnectionName" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:fecc4d91-010c-43b5-a580-e46e78f8af46" modelBinding="sf:ui:binding:object?object=Account&amp;field=Location__c" name="Location__c" title="Location__c">
+      <summary>UK - Select LA  / Australia - Select State / Other - Select Country</summary>
+    </param>
+  </params>
+  <outputParams>
+    <param name="AccountId" title="AccountId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+            <valueConstraint name="regex"/>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="AccountId"/>
+      </sourceValue>
+    </param>
+    <param name="AccountRowsID" title="AccountRowsID">
+      <summary>The name under which the returned rows will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+            <valueConstraint name="regex"/>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="AccountRowsID"/>
+      </sourceValue>
+    </param>
+  </outputParams>
+  <args>
+    <argument id="reuseConnectionName"/>
+    <argument id="Location__c"/>
+  </args>
+  <outputArgs>
+    <outputArgument id="AccountId">
+      <name class="value" valueClass="string">AccountId</name>
+    </outputArgument>
+    <outputArgument id="AccountIdx">
+      <name class="value" valueClass="string">AccountIdx</name>
+    </outputArgument>
+    <outputArgument id="AccountRowsID">
+      <name class="value" valueClass="string">AccountRowsID</name>
+    </outputArgument>
+  </outputArgs>
+</testCase>
