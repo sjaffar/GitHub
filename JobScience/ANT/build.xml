@@ -1,14 +1,18 @@
-<project default="runtests" xmlns:provar="antlib:com.provar.testrunner.ant">
+<project default="runtests">
 	<property environment="env"/>
-	<property name="provar.home" value="C:/Program Files/Provar_builds/Provar_v1.8.11.21/"/>
+	<property name="provar.home" value="C:/Program Files/Provar_builds/Provar_v1.8.10.22/"/>
 	<property name="testproject.home" value=".."/>
 	<property name="testproject.results" value="../ANT/Results"/>
-
-    <target name="runtests">
-    
-        <provar:compile provarHome="${provar.home}" projectPath="${testproject.home}"/>
-    	
-        <provar:run provarHome="${provar.home}" 
+	
+	<taskdef name="Provar-Compile" classname="com.provar.testrunner.ant.CompileTask" classpath="${provar.home}/ant/ant-provar.jar"/>
+	<taskdef name="Run-Test-Case" classname="com.provar.testrunner.ant.RunnerTask" classpath="${provar.home}/ant/ant-provar.jar;${provar.home}/ant/ant-provar-bundled.jar;${provar.home}/ant/ant-provar-sf.jar"/>
+	<taskdef name="Test-Cycle-Report" classname="com.provar.testrunner.ant.TestCycleReportTask" classpath="${provar.home}/ant/ant-provar.jar;${provar.home}/ant/ant-provar-bundled.jar;${provar.home}/ant/ant-provar-sf.jar"/>
+	
+	<target name="runtests">
+	
+		<Provar-Compile provarHome="${provar.home}" projectPath="${testproject.home}"/>
+	
+		<Run-Test-Case provarHome="${provar.home}" 
 				projectPath="${testproject.home}" 
 				resultsPath="${testproject.results}" 
 				resultsPathDisposition="Increment" 
@@ -22,9 +26,11 @@
 				pluginOutputlevel="WARNING"
 				invokeTestRunMonitor="true"
 				>
-			<fileset id="testcases" dir="../tests/TestSuite/Sales-General/Events"><include name="07-CreateEvent-RecruitmentSubsRDVisit.testcase"/></fileset>
-			<emailProperties sendEmail="true" primaryRecipients="sara.jaffar@tesglobal.com" ccRecipients="" bccRecipients="" emailSubject="Provar test run report" attachExecutionReport="false" attachZip="false"/>
-        </provar:run>
+		
+			<fileset dir="../tests/TestSuite/Sales-General/Contacts"></fileset>
 
-    </target>
+			<emailProperties sendEmail="true" primaryRecipients="sara.jaffar@tesglobal.com" ccRecipients="" bccRecipients="" emailSubject="Provar test run report" attachExecutionReport="false" attachZip="false"/>
+		</Run-Test-Case>
+
+	</target>
 </project>
