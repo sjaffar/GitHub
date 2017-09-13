@@ -95,9 +95,7 @@
           </value>
         </argument>
         <argument argId="0e088c58-444d-491b-b531-877d2fe57002" id="RecordTypeId">
-          <value class="variable">
-            <path element="RecordTypeId"/>
-          </value>
+          <value class="value" valueClass="string">Master Account</value>
         </argument>
         <argument id="CurrencyIsoCode">
           <value class="value" valueClass="string">GBP</value>

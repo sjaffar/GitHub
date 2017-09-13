@@ -279,12 +279,15 @@
                                   <value class="value" valueClass="string">full</value>
                                 </argument>
                                 <argument id="beforeWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="autoRetry"/>
                               </arguments>
                             </apiCall>
                             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="280" title="With ActivityHistories rows {1}">
+                              <tags>
+                                <string>disabled</string>
+                              </tags>
                               <arguments>
                                 <argument id="uiConnectionName">
                                   <value class="value" valueClass="string">JobScience</value>
@@ -322,20 +325,20 @@
                                           <value class="value" valueClass="string">Test</value>
                                         </argument>
                                         <argument id="fieldAssertions">
-                                          <value class="valueList" mutable="Mutable">
-                                            <uiFieldAssertion resultName="TASK_STATUS">
-                                              <fieldLocator uri="ui:locator?name=TASK_STATUS&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DTASK.STATUS%26relationship%3DActivityHistories"/>
-                                              <attributeAssertions>
-                                                <uiAttributeAssertion attributeName="value" comparisonType="None"/>
-                                              </attributeAssertions>
-                                            </uiFieldAssertion>
-                                          </value>
+                                          <value class="valueList" mutable="Mutable"/>
                                         </argument>
                                         <argument id="captureAfter">
                                           <value class="value" valueClass="boolean">false</value>
                                         </argument>
                                         <argument id="columnAssertions">
-                                          <value class="valueList" mutable="Mutable"/>
+                                          <value class="valueList" mutable="Mutable">
+                                            <uiColumnAssertion resultName="TASK_DUE_DATE">
+                                              <fieldLocator uri="ui:locator?name=TASK_DUE_DATE&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DTASK.DUE_DATE%26relationship%3DActivityHistories"/>
+                                              <attributeAssertions>
+                                                <uiAttributeAssertion attributeName="columnValues" comparisonType="None"/>
+                                              </attributeAssertions>
+                                            </uiColumnAssertion>
+                                          </value>
                                         </argument>
                                         <argument id="pageAssertions">
                                           <value class="valueList" mutable="Mutable"/>
@@ -355,6 +358,37 @@
                                   </type>
                                 </apiParam>
                               </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" isTitleUpdated="true" name="UiAssert" testItemId="285" title="ReadDueDate">
+                              <arguments>
+                                <argument id="resultName">
+                                  <value class="value" valueClass="string">DueDates</value>
+                                </argument>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Test</value>
+                                </argument>
+                                <argument id="fieldAssertions">
+                                  <value class="valueList" mutable="Mutable"/>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="columnAssertions">
+                                  <value class="valueList" mutable="Mutable">
+                                    <uiColumnAssertion resultName="TASK_DUE_DATE">
+                                      <fieldLocator uri="ui:locator?name=TASK_DUE_DATE&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DTASK.DUE_DATE%26relationship%3DActivityHistories"/>
+                                      <attributeAssertions>
+                                        <uiAttributeAssertion attributeName="columnValues" comparisonType="None"/>
+                                      </attributeAssertions>
+                                    </uiColumnAssertion>
+                                  </value>
+                                </argument>
+                                <argument id="pageAssertions">
+                                  <value class="valueList" mutable="Mutable"/>
+                                </argument>
+                                <argument id="beforeWait"/>
+                                <argument id="autoRetry"/>
+                              </arguments>
                             </apiCall>
                           </steps>
                         </clause>
@@ -441,7 +475,10 @@
                                 </argument>
                               </arguments>
                             </apiCall>
-                            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="271" title="Set Values: LowestDueDate">
+                            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="287" title="Set Values: LowestDueDate">
+                              <tags>
+                                <string>disabled</string>
+                              </tags>
                               <arguments>
                                 <argument id="values">
                                   <value class="valueList" mutable="Mutable">
@@ -455,6 +492,36 @@
                                           <path element="fields"/>
                                           <path element="TASK_STATUS"/>
                                           <path element="value"/>
+                                        </value>
+                                      </namedValue>
+                                      <namedValue name="valueScope">
+                                        <value class="value" valueClass="string">Test</value>
+                                      </namedValue>
+                                    </namedValues>
+                                  </value>
+                                </argument>
+                              </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="271" title="Set Values: LowestDueDate">
+                              <arguments>
+                                <argument id="values">
+                                  <value class="valueList" mutable="Mutable">
+                                    <namedValues mutable="Mutable">
+                                      <namedValue name="valuePath">
+                                        <value class="value" valueClass="string">LowestDueDate</value>
+                                      </namedValue>
+                                      <namedValue name="value">
+                                        <value class="variable">
+                                          <path element="DueDates"/>
+                                          <path element="columns"/>
+                                          <path element="TASK_DUE_DATE"/>
+                                          <path element="columnValues">
+                                            <filter class="conditionFilter">
+                                              <condition class="variable">
+                                                <path element="DueDateCount"/>
+                                              </condition>
+                                            </filter>
+                                          </path>
                                         </value>
                                       </namedValue>
                                       <namedValue name="valueScope">
@@ -585,8 +652,8 @@
                                       <arguments>
                                         <argument id="fieldAssertions">
                                           <value class="valueList" mutable="Mutable">
-                                            <uiFieldAssertion resultName="TASK_STATUS">
-                                              <fieldLocator uri="ui:locator?name=TASK_STATUS&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DTASK.STATUS%26relationship%3DActivityHistories"/>
+                                            <uiFieldAssertion resultName="TASK_DUE_DATE">
+                                              <fieldLocator uri="ui:locator?name=TASK_DUE_DATE&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DTASK.DUE_DATE%26relationship%3DActivityHistories"/>
                                               <attributeAssertions>
                                                 <uiAttributeAssertion attributeName="value" comparisonType="EqualTo">
                                                   <value class="variable">
@@ -616,7 +683,7 @@
                                           <value class="value" valueClass="string">true</value>
                                         </argument>
                                         <argument id="beforeWait">
-                                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                                          <value class="uiWait" uri="default"/>
                                         </argument>
                                         <argument id="autoRetry"/>
                                       </arguments>

@@ -403,7 +403,7 @@
                           <value class="uiTarget" uri="sf:ui:target?action=combo"/>
                         </argument>
                         <argument id="navigate">
-                          <value class="value" valueClass="string">Dont</value>
+                          <value class="value" valueClass="string">Always</value>
                         </argument>
                         <argument id="targetDescription">
                           <value class="value" valueClass="string">On SF Combo Box screen</value>
@@ -445,13 +445,33 @@
                                 <argument id="interactionDescription">
                                   <value class="value" valueClass="string">Click the Option button</value>
                                 </argument>
-                                <argument id="wait"/>
+                                <argument id="afterWait">
+                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                </argument>
+                                <argument id="ieClickMethod">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="autoRetry"/>
                               </arguments>
                               <generatedParameters>
                                 <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                                   <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                                   <type>
                                     <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                                  <summary>How the click should be executed for Internet Explorer.</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
                                   </type>
                                 </apiParam>
                               </generatedParameters>
@@ -848,7 +868,7 @@
                           <value class="valueList" mutable="Mutable"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry"/>
                       </arguments>

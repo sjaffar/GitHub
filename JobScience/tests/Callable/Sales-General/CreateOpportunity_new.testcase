@@ -90,19 +90,6 @@
         </outputArgument>
       </outputArguments>
     </caseCall>
-    <caseCall testCaseId="651d2e77-6cf6-4cd8-9fa7-72a350e8c9ed" testItemId="32">
-      <tags>
-        <string>disabled</string>
-      </tags>
-      <outputArguments>
-        <outputArgument id="AccountId">
-          <name class="value" valueClass="string">AccountId</name>
-        </outputArgument>
-        <outputArgument id="AccountRowsID">
-          <name class="value" valueClass="string">AccountRowsID</name>
-        </outputArgument>
-      </outputArguments>
-    </caseCall>
     <caseCall testCaseId="bef0cc97-1ec8-484a-bbf4-9a714096dd31" testItemId="26">
       <tags/>
       <arguments>
