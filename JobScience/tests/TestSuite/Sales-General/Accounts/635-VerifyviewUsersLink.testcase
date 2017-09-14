@@ -62,24 +62,23 @@
               <clauses>
                 <clause name="hidden" testItemId="52">
                   <steps>
-                    <caseCall testCaseId="1295e835-f722-4280-b6b6-d2d2b929aa89" testItemId="55">
+                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="154">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
                         </argument>
-                        <argument id="uiApplicationName">
-                          <value class="value" valueClass="string">Sales</value>
-                        </argument>
                         <argument id="RecordTypeId">
-                          <value class="value" valueClass="string">Master Account</value>
+                          <value class="variable">
+                            <path element="RecordTypeId"/>
+                          </value>
                         </argument>
                       </arguments>
                       <outputArguments>
-                        <outputArgument id="AccountId">
-                          <name class="value" valueClass="string">AccountId</name>
-                        </outputArgument>
                         <outputArgument id="AccountRowsID">
                           <name class="value" valueClass="string">AccountRowsID</name>
+                        </outputArgument>
+                        <outputArgument id="AccountId">
+                          <name class="value" valueClass="string">AccountId</name>
                         </outputArgument>
                       </outputArguments>
                     </caseCall>
@@ -167,7 +166,7 @@
                           <value class="valueList" mutable="Mutable"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry"/>
                       </arguments>
@@ -252,10 +251,10 @@
                           <value class="value" valueClass="string">Activate inline edit the Account Status picklist</value>
                         </argument>
                         <argument id="afterWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry"/>
                       </arguments>
@@ -287,10 +286,10 @@
                           <value class="value" valueClass="string">Set the Account Status picklist to Closed</value>
                         </argument>
                         <argument id="afterWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry"/>
                       </arguments>
@@ -338,10 +337,10 @@
                           <value class="value" valueClass="string">Activate inline edit the Reason for Closure field</value>
                         </argument>
                         <argument id="afterWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry"/>
                       </arguments>
@@ -373,10 +372,10 @@
                           <value class="value" valueClass="string">Set the Reason for Closure field to closure</value>
                         </argument>
                         <argument id="afterWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry"/>
                       </arguments>
@@ -582,10 +581,10 @@
                           <value class="value" valueClass="string">Click the SaveEdit button</value>
                         </argument>
                         <argument id="afterWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="ieClickMethod">
                           <value class="value" valueClass="string">Default</value>
@@ -693,7 +692,7 @@
                           <value class="valueList" mutable="Mutable"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry">
                           <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>

@@ -62,6 +62,10 @@ public class sbqq__sb {
 		@BooleanType()
 		@SteelBrickBy(fieldSetTableItem = "checkbox")
 		public WebElement productName1;
+
+		@BooleanType()
+		@SteelBrickBy(fieldSetTableItem = "checkbox")
+		public WebElement productName2;
 	}
 	@SteelBrickBy(pageTableRow = "sb-lookup-layout#lookupLayout")
 	@PageTable(firstRowContainsHeaders = false, row = ProductSelectionLines.class)
@@ -118,5 +122,8 @@ public class sbqq__sb {
 	public WebElement save;
 	@BooleanType()
 	@SteelBrickBy(customAction = "Save")
-	public WebElement save1;	
+	public WebElement save1;
+	@ButtonType()
+	@SteelBrickBy(customAction = "pcSave")
+	public WebElement save2;	
 }

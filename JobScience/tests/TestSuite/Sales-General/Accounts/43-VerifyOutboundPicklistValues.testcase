@@ -62,21 +62,23 @@
               <clauses>
                 <clause name="hidden" testItemId="43">
                   <steps>
-                    <caseCall testCaseId="1295e835-f722-4280-b6b6-d2d2b929aa89" testItemId="33">
+                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="48">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
                         </argument>
                         <argument id="RecordTypeId">
-                          <value class="value" valueClass="string">Master Account</value>
+                          <value class="variable">
+                            <path element="RecordTypeId"/>
+                          </value>
                         </argument>
                       </arguments>
                       <outputArguments>
-                        <outputArgument id="AccountId">
-                          <name class="value" valueClass="string">AccountId</name>
-                        </outputArgument>
                         <outputArgument id="AccountRowsID">
                           <name class="value" valueClass="string">AccountRowsID</name>
+                        </outputArgument>
+                        <outputArgument id="AccountId">
+                          <name class="value" valueClass="string">AccountId</name>
                         </outputArgument>
                       </outputArguments>
                     </caseCall>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="6">
+<testCase id="22">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: JobScience (Test)">
@@ -60,21 +60,23 @@
               <clauses>
                 <clause name="hidden" testItemId="439">
                   <steps>
-                    <caseCall testCaseId="1295e835-f722-4280-b6b6-d2d2b929aa89" testItemId="440">
+                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="444">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
                         </argument>
                         <argument id="RecordTypeId">
-                          <value class="value" valueClass="string">Personal Account</value>
+                          <value class="variable">
+                            <path element="RecordTypeId"/>
+                          </value>
                         </argument>
                       </arguments>
                       <outputArguments>
-                        <outputArgument id="AccountId">
-                          <name class="value" valueClass="string">AccountId</name>
-                        </outputArgument>
                         <outputArgument id="AccountRowsID">
                           <name class="value" valueClass="string">AccountRowsID</name>
+                        </outputArgument>
+                        <outputArgument id="AccountId">
+                          <name class="value" valueClass="string">AccountId</name>
                         </outputArgument>
                       </outputArguments>
                     </caseCall>

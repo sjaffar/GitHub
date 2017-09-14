@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="19">
+<testCase id="2">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="10" title="Salesforce Connect: IanHoy (Test)">
@@ -116,21 +116,23 @@
                       <clauses>
                         <clause name="hidden" testItemId="233">
                           <steps>
-                            <caseCall testCaseId="1295e835-f722-4280-b6b6-d2d2b929aa89" testItemId="20">
+                            <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="315">
                               <arguments>
                                 <argument id="reuseConnectionName">
                                   <value class="value" valueClass="string">JobScience</value>
                                 </argument>
                                 <argument id="RecordTypeId">
-                                  <value class="value" valueClass="string">Master Account</value>
+                                  <value class="variable">
+                                    <path element="RecordTypeId"/>
+                                  </value>
                                 </argument>
                               </arguments>
                               <outputArguments>
-                                <outputArgument id="AccountId">
-                                  <name class="value" valueClass="string">AccountId</name>
-                                </outputArgument>
                                 <outputArgument id="AccountRowsID">
                                   <name class="value" valueClass="string">AccountRowsID</name>
+                                </outputArgument>
+                                <outputArgument id="AccountId">
+                                  <name class="value" valueClass="string">AccountId</name>
                                 </outputArgument>
                               </outputArguments>
                             </caseCall>
@@ -254,7 +256,7 @@
                           <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.AccountGroupView"/>
                         </argument>
                         <argument id="navigate">
-                          <value class="value" valueClass="string">Dont</value>
+                          <value class="value" valueClass="string">Always</value>
                         </argument>
                         <argument id="targetDescription">
                           <value class="value" valueClass="string">On AccountGroupView page</value>
@@ -378,89 +380,6 @@
               <clauses>
                 <clause name="hidden" testItemId="288">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="306" title="On Accounts page">
-                      <tags>
-                        <string>disabled</string>
-                      </tags>
-                      <arguments>
-                        <argument id="uiConnectionName">
-                          <value class="value" valueClass="string">IanHoy</value>
-                        </argument>
-                        <argument id="target">
-                          <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.Accounts"/>
-                        </argument>
-                        <argument id="navigate">
-                          <value class="value" valueClass="string">Dont</value>
-                        </argument>
-                        <argument id="targetDescription">
-                          <value class="value" valueClass="string">On Accounts page</value>
-                        </argument>
-                        <argument id="windowSelection">
-                          <value class="value" valueClass="string">Default</value>
-                        </argument>
-                        <argument id="windowSize">
-                          <value class="value" valueClass="string">Default</value>
-                        </argument>
-                        <argument id="closeWindow"/>
-                        <argument id="captureBefore">
-                          <value class="value" valueClass="string">false</value>
-                        </argument>
-                        <argument id="captureAfter">
-                          <value class="value" valueClass="string">false</value>
-                        </argument>
-                        <argument id="uiTargetUrl"/>
-                      </arguments>
-                      <clauses>
-                        <clause name="substeps" testItemId="307">
-                          <steps>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="308" title="Click the Search All">
-                              <arguments>
-                                <argument id="locator">
-                                  <value class="uiLocator" uri="ui:pageobject:field?field=searchAll&amp;pageId=pageobjects.Accounts"/>
-                                </argument>
-                                <argument id="interaction">
-                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
-                                </argument>
-                                <argument id="hover">
-                                  <value class="value" valueClass="boolean">false</value>
-                                </argument>
-                                <argument id="captureBefore">
-                                  <value class="value" valueClass="boolean">false</value>
-                                </argument>
-                                <argument id="captureAfter">
-                                  <value class="value" valueClass="boolean">false</value>
-                                </argument>
-                                <argument id="beforeWait">
-                                  <value class="uiWait" uri="default"/>
-                                </argument>
-                                <argument id="afterWait">
-                                  <value class="uiWait" uri="default"/>
-                                </argument>
-                                <argument id="interactionDescription">
-                                  <value class="value" valueClass="string">Click the Search All</value>
-                                </argument>
-                                <argument id="autoRetry"/>
-                              </arguments>
-                              <generatedParameters>
-                                <apiParam group="value" name="hover" title="Hover before Clicking">
-                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
-                                  <type>
-                                    <booleanType/>
-                                  </type>
-                                </apiParam>
-                              </generatedParameters>
-                            </apiCall>
-                          </steps>
-                        </clause>
-                      </clauses>
-                      <generatedParameters>
-                        <apiParam group="target" name="uiTargetUrl" title="Web Page">
-                          <type>
-                            <textType/>
-                          </type>
-                        </apiParam>
-                      </generatedParameters>
-                    </apiCall>
                     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="309" title="On AccountGroupView page">
                       <arguments>
                         <argument id="uiConnectionName">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<lockManagerState class="lockManagerState" leaseIdSeq="4276">
+<lockManagerState class="lockManagerState" leaseIdSeq="4498">
   <lockManagers>
-    <mananger guid="3c5f28af-d006-4b53-9833-045f7695cf4c" ip="localhost" name="Provar" port="21213"/>
+    <mananger guid="c2bc62c3-807b-44ba-b5a5-9bc015aacf70" ip="localhost" name="Provar" port="2237"/>
   </lockManagers>
   <resourceMap/>
 </lockManagerState>
