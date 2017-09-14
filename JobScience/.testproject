@@ -107,7 +107,7 @@
           <summary/>
           <connectionUrls>
             <connectionUrl secureStorageNodeId="1ec4e502-9d31-4c9a-b732-7c40ad2f638b" url="google:user=provartes@gmail.com;password={password};accessToken={accessToken};refreshToken={refreshToken};expiry=1490873205000;proxyHost=;proxyUser="/>
-            <connectionUrl envName="TestEnv" secureStorageNodeId="bb959d31-7bcd-4605-8938-3964c3ebdce5" url="google:user=provartes@gmail.com;password={password};accessToken={accessToken};refreshToken={refreshToken};expiry=1505380037991"/>
+            <connectionUrl envName="TestEnv" secureStorageNodeId="bb959d31-7bcd-4605-8938-3964c3ebdce5" url="google:user=provartes@gmail.com;password={password};accessToken={accessToken};refreshToken={refreshToken};expiry=1505391012140"/>
           </connectionUrls>
         </connection>
       </connections>

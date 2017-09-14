@@ -512,10 +512,10 @@
                         </apiParam>
                       </generatedParameters>
                     </apiCall>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="276" title="Set the searchSalesforce to {MSLID}">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="276" title="Set the null to {MSLID}">
                       <arguments>
                         <argument id="locator">
-                          <value class="uiLocator" uri="ui:pageobject:field?field=searchSalesforce&amp;pageId=pageobjects.EmailScreen"/>
+                          <value class="uiLocator" uri="ui:pageobject:field?pageId=pageobjects.EmailScreen"/>
                         </argument>
                         <argument id="interaction">
                           <value class="uiInteraction" uri="ui:interaction?name=set"/>
@@ -538,7 +538,7 @@
                           <value class="value" valueClass="boolean">false</value>
                         </argument>
                         <argument id="interactionDescription">
-                          <value class="value" valueClass="string">Set the searchSalesforce to {MSLID}</value>
+                          <value class="value" valueClass="string">Set the null to {MSLID}</value>
                         </argument>
                         <argument id="afterWait">
                           <value class="uiWait" uri="default"/>

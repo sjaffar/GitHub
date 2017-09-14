@@ -2,7 +2,46 @@
 <testCase id="8">
   <summary/>
   <steps>
-    <apiCall apiId="com.provar.plugins.bundled.apis.messaging.SendMessage" name="SendMessage" testItemId="1" title="Send Message: TESGLOBAL">
+    <apiCall apiId="com.provar.plugins.bundled.apis.messaging.Subscribe" name="Subscribe" testItemId="2" title="Subscribe: TESGLOBAL">
+      <arguments>
+        <argument id="sourceConnectionName">
+          <value class="value" valueClass="string">TESGLOBAL</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">abcd</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="folder"/>
+        <argument id="from"/>
+        <argument id="subject"/>
+        <argument id="parseAttachment"/>
+      </arguments>
+      <generatedParameters>
+        <param group="source" linkedToUrl="connectionParam:sourceConnectionName" name="folder" title="Folder">
+          <type>
+            <textType/>
+          </type>
+        </param>
+        <param group="source" linkedToUrl="connectionParam:sourceConnectionName" name="from" title="From">
+          <type>
+            <textType/>
+          </type>
+        </param>
+        <param group="source" linkedToUrl="connectionParam:sourceConnectionName" name="subject" title="Subject">
+          <type>
+            <textType/>
+          </type>
+        </param>
+        <param group="source" linkedToUrl="connectionParam:sourceConnectionName" name="parseAttachment" title="Read Email Attachments">
+          <type>
+            <booleanType/>
+          </type>
+        </param>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.messaging.SendMessage" name="SendMessage" testItemId="3" title="Send Message: TESGLOBAL">
       <arguments>
         <argument id="destinationConnectionName">
           <value class="value" valueClass="string">TESGLOBAL</value>
@@ -17,7 +56,7 @@
           <value class="valueList" mutable="Mutable"/>
         </argument>
         <argument id="to">
-          <value class="value" valueClass="string">sara.jaffar@tesglobal.com</value>
+          <value class="value" valueClass="string">sjsamad5@gmail.com</value>
         </argument>
         <argument id="cc"/>
         <argument id="bcc"/>

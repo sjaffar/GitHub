@@ -46,6 +46,8 @@
         <argument id="lightningMode">
           <value class="value" valueClass="string">default</value>
         </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="webBrowser"/>
       </arguments>
     </apiCall>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="29" title="Set Values: GroupType">
@@ -69,25 +71,23 @@
         </argument>
       </arguments>
     </apiCall>
-    <caseCall testCaseId="1295e835-f722-4280-b6b6-d2d2b929aa89" testItemId="25">
-      <tags/>
+    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="30">
       <arguments>
         <argument id="reuseConnectionName">
           <value class="value" valueClass="string">JobScience</value>
         </argument>
         <argument id="RecordTypeId">
-          <value class="value" valueClass="string">012w0000000K49cAAC</value>
+          <value class="variable">
+            <path element="RecordTypeId"/>
+          </value>
         </argument>
       </arguments>
       <outputArguments>
-        <outputArgument id="AccountId">
-          <name class="value" valueClass="string">AccountId</name>
-        </outputArgument>
-        <outputArgument id="AccountIdx">
-          <name class="value" valueClass="string">AccountIdx</name>
-        </outputArgument>
         <outputArgument id="AccountRowsID">
           <name class="value" valueClass="string">AccountRowsID</name>
+        </outputArgument>
+        <outputArgument id="AccountId">
+          <name class="value" valueClass="string">AccountId</name>
         </outputArgument>
       </outputArguments>
     </caseCall>

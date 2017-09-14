@@ -373,7 +373,7 @@
                         <argument id="autoRetry"/>
                       </arguments>
                     </apiCall>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="320" title="Click the Opportunities New Group Opportunity button">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="320" title="Click the ?">
                       <arguments>
                         <argument id="locator">
                           <value class="uiLocator" uri="ui:locator?name=New_Group_Opportunity&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26action%3DNew_Group_Opportunity%26relationship%3DOpportunities__r"/>
@@ -382,7 +382,7 @@
                           <value class="uiInteraction" uri="ui:interaction?name=action"/>
                         </argument>
                         <argument id="interactionDescription">
-                          <value class="value" valueClass="string">Click the Opportunities New Group Opportunity button</value>
+                          <value class="value" valueClass="string">Click the ?</value>
                         </argument>
                         <argument id="captureBefore">
                           <value class="value" valueClass="string">false</value>
@@ -398,6 +398,7 @@
                           <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry"/>
+                        <argument id="ieClickMethod"/>
                       </arguments>
                       <generatedParameters>
                         <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">

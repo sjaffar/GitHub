@@ -57,21 +57,23 @@
       <clauses>
         <clause name="hidden" testItemId="47">
           <steps>
-            <caseCall testCaseId="1295e835-f722-4280-b6b6-d2d2b929aa89" testItemId="2">
+            <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="49">
               <arguments>
                 <argument id="reuseConnectionName">
                   <value class="value" valueClass="string">JobScience</value>
                 </argument>
                 <argument id="RecordTypeId">
-                  <value class="value" valueClass="string">Master Account</value>
+                  <value class="variable">
+                    <path element="RecordTypeId"/>
+                  </value>
                 </argument>
               </arguments>
               <outputArguments>
-                <outputArgument id="AccountId">
-                  <name class="value" valueClass="string">AccountId</name>
-                </outputArgument>
                 <outputArgument id="AccountRowsID">
                   <name class="value" valueClass="string">AccountRowsID</name>
+                </outputArgument>
+                <outputArgument id="AccountId">
+                  <name class="value" valueClass="string">AccountId</name>
                 </outputArgument>
               </outputArguments>
             </caseCall>
@@ -124,7 +126,7 @@
               <clauses>
                 <clause name="substeps" testItemId="21">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="22" title="Click the Member Accounts New button">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="22" title="Click the ?">
                       <arguments>
                         <argument id="locator">
                           <value class="uiLocator" uri="ui:locator?name=New&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26action%3DNew%26relationship%3DAccount_Group_Memberships__r"/>
@@ -142,9 +144,15 @@
                           <value class="value" valueClass="boolean">false</value>
                         </argument>
                         <argument id="interactionDescription">
-                          <value class="value" valueClass="string">Click the Member Accounts New button</value>
+                          <value class="value" valueClass="string">Click the ?</value>
                         </argument>
-                        <argument id="wait"/>
+                        <argument id="afterWait">
+                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                        </argument>
+                        <argument id="beforeWait">
+                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                        </argument>
+                        <argument id="autoRetry"/>
                       </arguments>
                       <generatedParameters>
                         <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
@@ -298,7 +306,7 @@
                                   <value class="uiWait" uri="ui:wait:timed?seconds=10"/>
                                 </argument>
                                 <argument id="autoRetry">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                               </arguments>
                               <generatedParameters>
@@ -349,10 +357,10 @@
                                   <value class="uiWait" uri="ui:wait:timed?seconds=10"/>
                                 </argument>
                                 <argument id="beforeWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="autoRetry">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="ieClickMethod">
                                   <value class="value" valueClass="string">Default</value>
@@ -399,10 +407,10 @@
                                   <value class="value" valueClass="string">Click the Account Name button</value>
                                 </argument>
                                 <argument id="afterWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="beforeWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="autoRetry">
                                   <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
@@ -462,10 +470,10 @@
                           <value class="value" valueClass="string">Set the Reason Added field to ProvarTestAddingNonPrincipalAccount</value>
                         </argument>
                         <argument id="afterWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry"/>
                       </arguments>

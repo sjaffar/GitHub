@@ -375,7 +375,7 @@
                                   <value class="value" valueClass="string">JobScience</value>
                                 </argument>
                                 <argument id="target">
-                                  <value class="uiTarget" uri="sf:ui:target?object=PricebookEntry&amp;action=List&amp;listView=Recruitment+Subs+2017-Jun-011493975123449"/>
+                                  <value class="uiTarget" uri="sf:ui:target?object=PricebookEntry&amp;action=List&amp;listView=Recruitment+Subs+2017-Jun-011499977332109"/>
                                 </argument>
                                 <argument id="navigate">
                                   <value class="value" valueClass="string">Always</value>
